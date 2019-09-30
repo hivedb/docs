@@ -51,3 +51,9 @@ var name = box.get('name');
 print('Name: $name');
 ```
 
+## Video Tutorial
+
+{% embed url="https://www.youtube.com/watch?v=R1GSrrItqUs" caption="Learn the basics of using Hive in this well made tutorial by Reso Coder." %}
+
+
+
