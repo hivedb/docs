@@ -6,6 +6,7 @@ This can be very useful for Flutter apps: You can rebuild widgets every time the
 
 ```dart
 var box = Hive.box('myBox');
+
 box.watch().listen((event) {
   if (event.deleted) {
     print('${event.key} has been deleted');
