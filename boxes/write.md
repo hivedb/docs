@@ -15,10 +15,10 @@ box.putAll({'key1': 'value1', 42: 'life'})
 ```
 
 You may wonder why writing works without async code. This is one of the main strengths of Hive.  
- The changes are written to the disk as soon as possible in the background but all listeners are notified immediately. If the async operation fails \(which it should not\), all listeners are notified again with the old values.  
- If you want to make sure that a write operation is successful just await its Future.
+The changes are written to the disk as soon as possible in the background but all listeners are notified immediately. If the async operation fails \(which it should not\), all listeners are notified again with the old values.  
+If you want to make sure that a write operation is successful just await its `Future`.
 
-This does not work for [lazy boxes](../advanced/lazy_box.md): As long as the `put()` Future did not finish, `get()` will return the old values \(or `null` if it doen't exist\).
+This does not work for [lazy boxes](../advanced/lazy_box.md): As long as the `Future`returned by `put()` did not finish, `get()` will return the old values \(or `null` if it doen't exist\).
 
 The following code shows the difference:
 

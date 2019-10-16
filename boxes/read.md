@@ -18,7 +18,25 @@ double height = box.get('randomKey', defaultValue: 17.5);
 
 Lists returned by `get()` are always of type `List<dynamic>` \(Maps of type `Map<dynamic, dynamic>`\). Use `list.cast<SomeType>()` to cast them to a specific type.
 
-## Related
+### Every object only exists once
 
-[Watch changes](watch_changes.md) to learn more about box.watch() and how to listen for changes using a `Stream`.
-[Hive & Flutter](../best-practices/hive_and_flutter.md) for `WatchBoxBuilder`, a Widget that responds when a box value changes.
+It is very important to understand that you always get the same instance of an object from a specific key. This does not matter much for primitive values since primitives are immutable but it is important for all other objects.
+
+Here is an example:
+
+```dart
+var box = Hive.box('someBox');
+
+var initialList = ['a', 'b', 'c'];
+box.put('myList', initialList);
+
+var myList = box.get('myList');
+myList[0] = 'd';
+
+print(initialList[0]); // d
+```
+
+The `initialList` and `myList` are the same instance and share the same data.
+
+In the sample above, only the cached object has been changed and not the underlying data. To persist the change, `box.put('myList', myList)` would need to be called.
+

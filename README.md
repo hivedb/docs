@@ -21,7 +21,9 @@ dev_dependencies:
 
 ## Initialize
 
-When your program starts, Hive needs to be initialized. Give it a directory where it can store its files. It is recommended to use an empty directory and not to store any other data there. Each box will have it's own `.hive` file in the Hive-home directory.
+Before you can use Hive in your app, you must initialize it. This only has to be done once. 
+
+Give Hive a directory where it can store its files. It is recommended to use an empty directory. Each box will have it's own `.hive` file in the Hive-home directory.
 
 ```dart
 Hive.init('path/to/hive');
@@ -39,9 +41,13 @@ All of your data is stored in boxes.
 var box = await Hive.openBox('testBox');
 ```
 
+{% hint style="info" %}
+You may call `box('testBox')` to get the singleton instance of an already opened box. This will save one async call.
+{% endhint %}
+
 ## Read & Write
 
-Hive supports all primitive types, `List`, `Map`, `DateTime` and `Uint8List`. Any object can be can stored using [TypeAdapters](typeadapters/generate_adapter.md).
+Hive supports all primitive types, `List`, `Map`, `DateTime` and `Uint8List`. Any object can be can stored using [TypeAdapters](custom-objects/generate_adapter.md).
 
 ```dart
 box.put('name', 'David');
@@ -54,6 +60,4 @@ print('Name: $name');
 ## Video Tutorial
 
 {% embed url="https://www.youtube.com/watch?v=R1GSrrItqUs" caption="Learn the basics of using Hive in this well made tutorial by Reso Coder." %}
-
-
 

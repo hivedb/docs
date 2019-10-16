@@ -9,7 +9,7 @@ For a small app, a single box might be enough. For more advanced problems, boxes
 Before a box can be used, you have to open it:
 
 ```dart
-var box = await Hive.openBox('testBox');
+var box = await Hive.openBox<E>('testBox');
 ```
 
 | Parameter | Description |
@@ -20,6 +20,7 @@ var box = await Hive.openBox('testBox');
 | compactionStrategy | Specify your own rules for automatic compaction. |
 | crashRecovery | If your app is killed while a write operations is running, the last entry might be corrupted. This entry will be deleted automatically when the app starts again. If you don't want this behaviour, you can disable it. |
 | lazy | By default, all keys and values are stored in memory and read operations are synchronous \(no disk access\). By setting this to true, values are not cached and loaded asynchronously. |
+| `E` | The optional type parameter specifies the type of the values in the box. |
 
 If the box is already open, it will be returned immediately. All supplied parameters will be ignored.
 
@@ -50,4 +51,33 @@ await box.close();
 ```
 
 Before your application exits, you should call `Hive.close()` to close all open boxes. Don't worry if the app is killed before you close Hive, it doesn't matter.
+
+## Type parameter: Box&lt;E&gt;
+
+When you open a box, you can specify that it may only contain values of a specific type. For example a user box could be opened like this:
+
+```dart
+var box = await Hive.openBox<User>('users');
+
+box.add(User());
+
+box.add(5); // Compile time error
+```
+
+This box can also contain subtypes of `User`.
+
+It is important that you provide the same type parameter to `Hive.box()`. You cannot open the same box multiple times with different type parametes. 
+
+```dart
+await Hive.openBox<User>('users');
+
+Hive.box<User>('users'); // OK
+
+Hive.box('users'); // ERROR
+Hive.box<Dog>('users'); // ERROR
+```
+
+{% hint style="warning" %}
+Generic type parameters like Box&lt;List&lt;int&gt;&gt; are unsupported due to Dart limitations.
+{% endhint %}
 

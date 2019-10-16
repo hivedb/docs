@@ -11,11 +11,12 @@
 * [Auto increment & indices](boxes/auto_increment.md)
 * [Watch changes](boxes/watch_changes.md)
 
-## Type Adapters <a id="typeadapters"></a>
+## Custom Objects
 
-* [What is a TypeAdapter?](typeadapters/type_adapters.md)
-* [Generate adapter](typeadapters/generate_adapter.md)
-* [Create adapter manually](typeadapters/create_adapter_manually.md)
+* [Untitled](custom-objects/untitled.md)
+* [Generate adapter](custom-objects/generate_adapter.md)
+* [Untitled](custom-objects/untitled-1.md)
+* [Create adapter manually](custom-objects/create_adapter_manually.md)
 
 ## Advanced
 

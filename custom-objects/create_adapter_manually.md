@@ -3,7 +3,7 @@
 Sometimes it might be necessary to create a custom `TypeAdapter`. You can do that by extending the `TypeAdapter` class. Make sure to specify the generic argument.
 
 {% hint style="warning" %}
-Test your custom `TypeAdapter`s thoroughly. If one does not work correctly, it may corrupt your box.
+Test your custom `TypeAdapter` thoroughly. If it does not work correctly, it may corrupt your box.
 {% endhint %}
 
 It is very easy to implement a `TypeAdapter`. Keep in mind that `TypeAdapter`s have to be immutable! Here is the `DataTimeAdapter` used by Hive internally:
