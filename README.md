@@ -41,7 +41,7 @@ var box = await Hive.openBox('testBox');
 
 ## Read & Write
 
-Hive supports all primitive types, `List`, `Map`, `DateTime` and `Uint8List`. Any object can be can stored using [TypeAdapters](typeadapters/generate_adapter.md)
+Hive supports all primitive types, `List`, `Map`, `DateTime` and `Uint8List`. Any object can be can stored using [TypeAdapters](typeadapters/generate_adapter.md).
 
 ```dart
 box.put('name', 'David');
@@ -50,4 +50,10 @@ var name = box.get('name');
 
 print('Name: $name');
 ```
+
+## Video Tutorial
+
+{% embed url="https://www.youtube.com/watch?v=R1GSrrItqUs" caption="Learn the basics of using Hive in this well made tutorial by Reso Coder." %}
+
+
 
