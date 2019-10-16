@@ -55,5 +55,3 @@ print('Name: $name');
 
 {% embed url="https://www.youtube.com/watch?v=R1GSrrItqUs" caption="Learn the basics of using Hive in this well made tutorial by Reso Coder." %}
 
-
-

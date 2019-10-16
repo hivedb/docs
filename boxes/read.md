@@ -20,5 +20,5 @@ Lists returned by `get()` are always of type `List<dynamic>` \(Maps of type `Map
 
 ## Related
 
-[Watch changes](watch_changes.md) to learn more about box.watch() and how to listen for changes using a `Stream`.
-[Hive & Flutter](../best-practices/hive_and_flutter.md) for `WatchBoxBuilder`, a Widget that responds when a box value changes.
+[Watch changes](watch_changes.md) to learn more about box.watch\(\) and how to listen for changes using a `Stream`. [Hive & Flutter](../best-practices/hive_and_flutter.md) for `WatchBoxBuilder`, a Widget that responds when a box value changes.
+
