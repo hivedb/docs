@@ -66,7 +66,7 @@ box.add(5); // Compile time error
 
 This box can also contain subtypes of `User`.
 
-It is important that you provide the same type parameter to `Hive.box()`. You cannot open the same box multiple times with different type parametes. 
+It is important that you provide the same type parameter to `Hive.box()`. You cannot open the same box multiple times with different type parametes.
 
 ```dart
 await Hive.openBox<User>('users');

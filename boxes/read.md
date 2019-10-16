@@ -18,7 +18,7 @@ double height = box.get('randomKey', defaultValue: 17.5);
 
 Lists returned by `get()` are always of type `List<dynamic>` \(Maps of type `Map<dynamic, dynamic>`\). Use `list.cast<SomeType>()` to cast them to a specific type.
 
-### Every object only exists once
+## Every object only exists once
 
 It is very important to understand that you always get the same instance of an object from a specific key. This does not matter much for primitive values since primitives are immutable but it is important for all other objects.
 

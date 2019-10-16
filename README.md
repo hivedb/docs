@@ -22,7 +22,7 @@ dev_dependencies:
 
 ## Initialize
 
-Before you can use Hive in your app, you must initialize it. This only has to be done once. 
+Before you can use Hive in your app, you must initialize it. This only has to be done once.
 
 Give Hive a directory where it can store its files. It is recommended to use an empty directory. Each box will have it's own `.hive` file in the Hive-home directory.
 
