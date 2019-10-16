@@ -8,11 +8,12 @@ description: Lightweight and blazing fast key-value database written in pure Dar
 
 Add the following to your `pubspec.yaml`. Use the latest version instead of `[version]`.
 
-[![Core version](https://img.shields.io/pub/v/hive?label=hive)](https://pub.dev/packages/hive) [![Generator version](https://img.shields.io/pub/v/hive_generator.svg?label=hive_generator)](https://pub.dev/packages/hive_generator) [![Build runner version](https://img.shields.io/pub/v/build_runner.svg?label=build_runner)](https://pub.dev/packages/build_runner)
+[![Core version](https://img.shields.io/pub/v/hive?label=hive)](https://pub.dev/packages/hive) [![Generator version](https://img.shields.io/pub/v/hive_generator.svg?label=hive_flutter)](https://pub.dev/packages/hive_flutter) [![Flutter version](https://img.shields.io/pub/v/hive_generator.svg?label=hive_generator)](https://pub.dev/packages/hive_generator) [![Build runner version](https://img.shields.io/pub/v/build_runner.svg?label=build_runner)](https://pub.dev/packages/build_runner)
 
 ```yaml
 dependencies:
   hive: ^[version]
+  hive_flutter: ^[version]
 
 dev_dependencies:
   hive_generator: ^[version]
