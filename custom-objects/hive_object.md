@@ -1,4 +1,4 @@
-# Untitled
+# HiveObject
 
 When you store custom objects in Hive you can extend `HiveObject` to manage your objects easily.`HiveObject` provides the key of your object and useful helper methods like `save()` or `delete()`.
 

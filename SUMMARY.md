@@ -13,9 +13,9 @@
 
 ## Custom Objects
 
-* [Untitled](custom-objects/untitled.md)
+* [TypeAdapters](custom-objects/type_adapters.md)
 * [Generate adapter](custom-objects/generate_adapter.md)
-* [Untitled](custom-objects/untitled-1.md)
+* [HiveObject](custom-objects/hive_object.md)
 * [Create adapter manually](custom-objects/create_adapter_manually.md)
 
 ## Advanced
