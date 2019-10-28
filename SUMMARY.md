@@ -36,4 +36,5 @@
 * [Browser support](more/browser.md)
 * [Frequently Asked Questions](more/faq.md)
 * [Limitations](more/limitations.md)
+* [Snippets for VSCode](more/vscode-snippets.md)
 
