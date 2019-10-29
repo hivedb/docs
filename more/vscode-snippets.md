@@ -37,7 +37,7 @@ It is very easy to add Hive snippets to VSCode:
     "body": [
       "import 'package:hive/hive.dart';",
       "",
-      "part '${TM_FILENAME_BASE}.g.part';",
+      "part '${TM_FILENAME_BASE}.g.dart';",
       "",
       "@HiveType()",
       "class ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} extends HiveObject {",
@@ -53,7 +53,7 @@ It is very easy to add Hive snippets to VSCode:
     "body": [
       "import 'package:hive/hive.dart';",
       "",
-      "part '${TM_FILENAME_BASE}.g.part';",
+      "part '${TM_FILENAME_BASE}.g.dart';",
       "",
       "@HiveType()",
       "class ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} {",
