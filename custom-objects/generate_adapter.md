@@ -5,7 +5,7 @@ The [hive\_generator](https://pub.dev/packages/hive_generator) automatically gen
 1. To generate a `TypeAdapter` for a class, annotate it with `@HiveType`
 2. Annotate all fields which should be stored with `@HiveField`
 3. Run build task `flutter packages pub run build_runner build`
-4. [Register]() adapter
+4. [Register](generate_adapter.md) adapter
 
 ### Example
 

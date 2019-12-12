@@ -9,7 +9,7 @@ Here is an example how to use `HiveObject`:
 class Person extends HiveObject {
   @HiveField(0);
   String name;
-  
+
   @HiveField(1);
   int age;
 }
@@ -21,7 +21,7 @@ var box = Hive.box('persons');
 var person = Person()
   ..name = 'Lisa'
   ..age = 32;
-  
+
 box.add(person); // Store this object for the first time
 
 print('New key of Lisa: ' + person.key);
