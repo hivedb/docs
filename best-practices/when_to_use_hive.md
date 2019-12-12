@@ -2,7 +2,7 @@
 
 ## When to use Hive
 
-Hive is very performant because it has little overhead compared to relational databases. The API is very close to how the data is actually stored on the disk.
+Hive is very performant because it has little overhead compared to relational databases. The API is very close to how the data is stored on the disk.
 
 Key-value databases can be used to store almost any kind of data. For example:
 
@@ -15,7 +15,9 @@ Key-value databases can be used to store almost any kind of data. For example:
 * Binary data
 * etc.
 
-Hive is also one of the best options when it comes to cross platform support. You don't have to include binaries and it works in the browser using IndexedDB.
+Hive is also one of the best options when it comes to cross-platform support. You don't have to include binaries, and it works in the browser using IndexedDB.
+
+If you use the `shared_preferences` packages and don't need to access them from native code, you should always use Hive instead.
 
 ## When not to use Hive
 

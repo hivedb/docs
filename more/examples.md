@@ -4,14 +4,14 @@
 
 This app works almost exactly like the hello world flutter app. But it will store the counter value in Hive.
 
-You can learn how to open Hive and use it's basic methods.
+You can learn how to open Hive and use its basic methods.
 
 * [Flutter Web demo](https://hivedb.github.io/hive/demos/counter/)
 * [Source Code](https://github.com/hivedb/samples/tree/master/counter)
 
 ## Hive To-Do
 
-This To-Do app has a generated TypeAdapter for the `Todo` class. It also stores the state of the app \(sorting order of todos\).
+This Todo app has a generated TypeAdapter for the `Todo` class. It also stores the state of the app \(sorting order of todos\).
 
 * [Flutter Web demo](https://hivedb.github.io/hive/demos/todo/)
 * [Source Code](https://github.com/hivedb/samples/tree/master/todo)

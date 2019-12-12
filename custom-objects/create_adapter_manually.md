@@ -23,7 +23,7 @@ class DataTimeAdapter extends TypeAdapter<DateTime> {
 }
 ```
 
-The `read()` method is called when your object has to be read from the disk. Use the `BinaryReader` to read all properties of your object. In the above sample it is only an `int` containing `millisecondsSinceEpoch`.  
+The `read()` method is called when your object has to be read from the disk. Use the `BinaryReader` to read all the properties of your object. In the above sample, it is only an `int` containing `millisecondsSinceEpoch`.  
 The `write()` method is the same just for writing the object to the disk.
 
 {% hint style="warning" %}

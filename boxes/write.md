@@ -1,6 +1,6 @@
 # Write
 
-Writing to a box is almost like writing to a map. All keys have to be ASCII Strings with a max lenght of 255 chars or unsinged 32 bit integers.
+Writing to a box is almost like writing to a map. All keys have to be ASCII Strings with a max length of 255 chars or unsinged 32 bit integers.
 
 ```dart
 var box = Hive.box('myBox');
@@ -16,9 +16,9 @@ box.putAll({'key1': 'value1', 42: 'life'})
 
 You may wonder why writing works without async code. This is one of the main strengths of Hive.  
 The changes are written to the disk as soon as possible in the background but all listeners are notified immediately. If the async operation fails \(which it should not\), all listeners are notified again with the old values.  
-If you want to make sure that a write operation is successful just await its `Future`.
+If you want to make sure that a write operation is successful, just await its `Future`.
 
-This works differently for [lazy boxes](../advanced/lazy_box.md): As long as the `Future`returned by `put()` did not finish, `get()` will return the old values \(or `null` if it doen't exist\).
+This works differently for [lazy boxes](../advanced/lazy_box.md): As long as the `Future` returned by `put()` did not finish, `get()` returns the old values \(or `null` if it doesn't exist\).
 
 The following code shows the difference:
 

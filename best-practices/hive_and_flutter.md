@@ -2,7 +2,7 @@
 
 ## WatchBoxBuilder
 
-The `WatchBoxBuilder` widget can be used to refresh parts of your app when the data in Hive changes.
+You can use the `WatchBoxBuilder` widget can to refresh parts of your app when the data in Hive changes.
 
 ```dart
 class MyWidget extends StatelessWidget {
@@ -19,11 +19,11 @@ class MyWidget extends StatelessWidget {
 }
 ```
 
-Each time the value associated to `firstName` or `lastName` change, the `builder` is called and the `Text` widget refreshed.
+Each time the value associated with `firstName` or `lastName` change, the `builder` is called, and the `Text` widget refreshed.
 
 ## Async calls
 
-Many of the Hive methods like `put()` or `delete()` are asynchronous. Handling async calls in Flutter is not fun because you have to use `FutureBuilder` or `StreamBuilder` and handle exceptions etc.
+Many of the Hive methods like `put()` or `delete()` are asynchronous. Handling async calls in Flutter is not fun because you have to use `FutureBuilder` or `StreamBuilder` and handle exceptions.
 
-The good news is that you don't have to await all the `Future`s returned by Hive. Changes are applied instantly, even if the `Future` has not finished yet. If you want to make sure that a write operation is successful just await its `Future`.
+The good news is that you don't have to await all the `Future`s returned by Hive. Changes are applied instantly, even if the `Future` has not finished yet. If you want to make sure that a write operation is successful, just await its `Future`.
 

@@ -1,8 +1,8 @@
 # Watch changes
 
-If you want to get notified about changes in a box, you can subscribe to the `Stream` returned by `box.watch()`. Every `put()`, `putAll()`, `delete()` and `deleteAll()` operation will be broadcasted to that stream.
+If you want to get notified about changes in a box, you can subscribe to the `Stream` returned by `box.watch()`. Every `put()`, `putAll()`, `delete()` and `deleteAll()` operation is broadcasted to that stream.
 
-This can be very useful for Flutter apps: You can rebuild widgets every time the box changes.
+In Flutter apps you can rebuild widgets every time the box changes.
 
 ```dart
 var box = Hive.box('myBox');
@@ -19,7 +19,7 @@ box.put('someKey', 123); // > someKey is now assigned to 123
 box.delete('someKey'); // > someKey has been deleted
 ```
 
-If you specify the `key` parameter, you will only be notified about changes of this key.
+If you specify the `key` parameter, you are only notified about changes of this key.
 
 ```dart
 box.watch(key: 'someKey').listen((event) {

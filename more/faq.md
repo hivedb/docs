@@ -2,7 +2,7 @@
 
 ## Which platforms does Hive support?
 
-Hive supports all platforms where the dart vm runs plus browsers. On browsers the IndexedDB is used as backend.
+Hive supports all platforms where the Dart VM runs plus browsers. On browsers, IndexedDB is used as a backend.
 
 ## When should I use Hive
 
@@ -22,7 +22,7 @@ Yes.
 
 ## What happens if my app is killed?
 
-The worst thing that can happen is that you lose the last entry if it isn't written completely yet. Hive has built in integrity checking and crash recovery and will take care of everything.
+The worst thing that can happen is that you lose the last entry if it isn't written completely yet. Hive has built-in integrity checking and crash recovery and takes care of everything.
 
 ## Why is `box.get()` synchronous? Isn't that slow?
 
@@ -30,11 +30,11 @@ Hive caches all entries by default, so no. If you don't want that, use [lazy box
 
 ## Can I use Hive to store binary data like images?
 
-Yes but don't store too big images \(a few MB should be fine\).
+Yes, but don't store too big images \(a few MB should be fine\).
 
 ## Can Hive sync data with a server?
 
-Not out of the box but you can do that yourself quite easily using the `box.toMap()` method and / or the [change notifier](../boxes/watch_changes.md).
+Not out of the box but you can do that yourself quite easily using the `box.toMap()` method and the [change notifier](../boxes/watch_changes.md).
 
 ## What type of encryption does Hive use?
 
@@ -42,5 +42,5 @@ AES 256 CBC with PKCS7 padding.
 
 ## Do I have to call `Hive.close()`
 
-No you don't. It might speed up the next start of your app but nothing to worry about.
+No, you don't. It might speed up the next start of your app but nothing to worry about.
 
