@@ -11,11 +11,12 @@
 * [Auto increment & indices](boxes/auto_increment.md)
 * [Watch changes](boxes/watch_changes.md)
 
-## Custom Objects
+## Objects <a id="custom-objects"></a>
 
 * [TypeAdapters](custom-objects/type_adapters.md)
 * [Generate adapter](custom-objects/generate_adapter.md)
 * [HiveObject](custom-objects/hive_object.md)
+* [Relationships](custom-objects/relationships.md)
 * [Create adapter manually](custom-objects/create_adapter_manually.md)
 
 ## Advanced

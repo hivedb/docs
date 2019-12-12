@@ -24,7 +24,7 @@ dev_dependencies:
 
 Before you can use Hive in your app, you must initialize it. This only has to be done once.
 
-Give Hive a directory where it can store its files. It is recommended to use an empty directory. Each box will have it's own `.hive` file in the Hive-home directory.
+Give Hive a directory where it can store its files. It is recommended to use an empty directory. Each box has its own `.hive` file in the Hive-home directory.
 
 ```dart
 Hive.init('path/to/hive');
@@ -32,7 +32,7 @@ Hive.init('path/to/hive');
 
 If you use a directory outside your app files, make sure to request runtime permission on Android.
 
-_In the browser you don't have to call `Hive.init()`._
+_In the browser, you don't have to call `Hive.init()`._
 
 ## Open a Box
 
@@ -48,7 +48,7 @@ You may call `box('testBox')` to get the singleton instance of an already opened
 
 ## Read & Write
 
-Hive supports all primitive types, `List`, `Map`, `DateTime` and `Uint8List`. Any object can be can stored using [TypeAdapters](custom-objects/generate_adapter.md).
+Hive supports all primitive types, `List`, `Map`, `DateTime`, and `Uint8List`. Any object can be can stored using [TypeAdapters](custom-objects/generate_adapter.md).
 
 ```dart
 box.put('name', 'David');
@@ -60,5 +60,5 @@ print('Name: $name');
 
 ## Video Tutorial
 
-{% embed url="https://www.youtube.com/watch?v=R1GSrrItqUs" caption="Learn the basics of using Hive in this well made tutorial by Reso Coder." %}
+{% embed url="https://www.youtube.com/watch?v=R1GSrrItqUs" caption="Learn the basics of using Hive in this well-made tutorial by Reso Coder." %}
 
