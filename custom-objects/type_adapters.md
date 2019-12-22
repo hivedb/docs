@@ -12,6 +12,8 @@ When you want Hive to use a `TypeAdapter`, you have to register it. Two things a
 Hive.registerAdapter(MyObjectAdapter(), 0);
 ```
 
+When multiple adapters support serializing a value, e.g. `TypeAdapter<num>` and `TypeAdapter<int>` Hive will use the adapter which was registered first.
+
 {% hint style="warning" %}
 Make sure to use `typeId`s consistently. Your changes have to be compatible to previous versions of the box.
 {% endhint %}
