@@ -8,7 +8,7 @@ class Person extends HiveObject {
 
   int age;
 
-  List<Person> friends;
+  HiveList<Person> friends;
 
   Person(this.name, this.age);
 }
@@ -43,4 +43,8 @@ First, we store the three persons, Mario, Luna, and Alex in the `persons` box. H
 Next, we create a `HiveList` which contains Mario's friends. The `HiveList` constructor needs the `HiveObject`, which will contain the list. The list must not be moved to another `HiveObject`. The second parameter is the box, which contains the items of the list.
 
 When you delete an object from a box, it is also deleted from all `HiveLists`. If you delete an object from a `HiveList`, it still remains in the box.
+
+{% hint style="warning" %}
+It is important to use `HiveList` as field type in models. `List friends = HiveList(...)` does not work correctly.
+{% endhint %}
 
