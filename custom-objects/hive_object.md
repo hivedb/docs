@@ -24,7 +24,7 @@ var person = Person()
 
 box.add(person); // Store this object for the first time
 
-print('New key of Lisa: ' + person.key);
+print('New key of Lisa: ${person.key}');
 
 person.age = 35;
 person.save(); // Update object
