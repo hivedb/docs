@@ -33,7 +33,7 @@ void main() {
   var alex = Person('Alex', 16);
   persons.addAll([mario, luna, alex]);
 
-  mario.friends = HiveList(mario, persons); // Create a HiveList
+  mario.friends = HiveList(persons); // Create a HiveList
   mario.friends.addAll([luna, alex]); // Add Luna and Alex to Mario's friends
   print(mario.friends); // [Luna, Alex]
 
@@ -44,7 +44,7 @@ void main() {
 
 First, we store the three persons, Mario, Luna, and Alex in the `persons` box. HiveLists can only be used with objects which are currently in a box.
 
-Next, we create a `HiveList` which contains Mario's friends. The `HiveList` constructor needs the `HiveObject`, which will contain the list. The list must not be moved to another `HiveObject`. The second parameter is the box, which contains the items of the list.
+Next, we create a `HiveList` which contains Mario's friends. The `HiveList` constructor needs the box, which contains the items of the list.
 
 When you delete an object from a box, it is also deleted from all `HiveLists`. If you delete an object from a `HiveList`, it still remains in the box.
 
