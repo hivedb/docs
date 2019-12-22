@@ -5,11 +5,11 @@ Sometimes your models are connected with each other. The following person class 
 ```dart
 class Person extends HiveObject {
   String name;
-  
+
   int age;
-  
+
   List<Person> friends;
-  
+
   Person(this.name, this.age);
 }
 ```
@@ -23,16 +23,16 @@ HiveLists provide an easy way to solve the problem above. They allow you to stor
 ```dart
 void main() {
   var persons = Hive.box<Person>('persons');
-  
+
   var mario = Person('Mario', 27);
   var luna = Person('Luna', 34);
   var alex = Person('Alex', 16);
   persons.addAll([mario, luna, alex]);
-  
+
   mario.friends = HiveList(mario, persons); // Create a HiveList
   mario.friends.addAll([luna, alex]); // Add Luna and Alex to Mario's friends
   print(mario.friends); // [Luna, Alex]
-  
+
   luna.delete(); // Remove Luna from Hive
   print(mario.friends); // [Alex] (HiveList updates automatically)
 }
