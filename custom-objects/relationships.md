@@ -26,7 +26,7 @@ void main() {
   
   var mario = Person('Mario', 27);
   var luna = Person('Luna', 34);
-  var alex = Person('Aley', 16);
+  var alex = Person('Alex', 16);
   persons.addAll([mario, luna, alex]);
   
   mario.friends = HiveList(mario, persons); // Create a HiveList
