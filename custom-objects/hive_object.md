@@ -7,10 +7,10 @@ Here is an example how to use `HiveObject`:
 ```dart
 @HiveType()
 class Person extends HiveObject {
-  @HiveField(0);
+  @HiveField(0)
   String name;
 
-  @HiveField(1);
+  @HiveField(1)
   int age;
 }
 ```
