@@ -8,7 +8,7 @@ Since Key-value stores are really simple, data can be modeled in a less complica
 
 All keys are sorted lexicographically by default. You can use that to get "free" ordering. E.g., if you want to store users, you could use the last names and a unique number as a key to sort them by the last name.
 
-You can also provide a custom key sorting function. You could, for example, revert the sorting order.
+You can also provide a custom key sorting function. You could, for example, reverse the sorting order.
 
 ## Lists vs Auto Increment
 
