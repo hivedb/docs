@@ -12,7 +12,42 @@ When you want Hive to use a `TypeAdapter`, you have to register it. Two things a
 Hive.registerAdapter(MyObjectAdapter(), 0);
 ```
 
-{% hint style="warning" %}
-Make sure to use `typeId`s consistently. Your changes have to be compatible to previous versions of the box.
-{% endhint %}
+?> Make sure to use `typeId`s consistently. Your changes have to be compatible to previous versions of the box.
 
+```dart:dart:500px
+import 'package:hive/hive.dart';
+
+class User {
+  String name;
+
+  User(this.name);
+
+  @override
+  String toString() => name; // Just for print()
+}
+
+void main() async {
+  // Register Adapter with id 0
+  Hive.registerAdapter(UserAdapter(), 0); 
+
+  var box = await Hive.openBox<User>('userBox');
+
+  box.put('david', User('David'));
+  box.put('sandy', User('Sandy'));
+
+  print(box.values);
+}
+
+// Can be generated automatically
+class UserAdapter extends TypeAdapter<User> {
+  @override
+  User read(BinaryReader reader) {
+    return User(reader.read());
+  }
+
+  @override
+  void write(BinaryWriter writer, User obj) {
+    writer.write(obj.name);
+  }
+}
+```

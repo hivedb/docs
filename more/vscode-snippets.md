@@ -2,7 +2,7 @@
 
 Thanks to [@peekpt](https://github.com/peekpt), there are now snippets for building model classes for Hive. They allow you to write `HiveObjects` in record time:
 
-![Hive snippets in action](../.gitbook/assets/67619688-43061b80-f7f6-11e9-9efc-29231e89b387.gif)
+![Hive snippets in action](../assets/snippets.gif)
 
 ## Installation
 

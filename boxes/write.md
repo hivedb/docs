@@ -28,17 +28,12 @@ var box = await Hive.openBox('box');
 box.put('key', 'value');
 print(box.get('key')); // value
 
+var lazyBox = await Hive.openLazyBox('lazyBox');
 
-var lazyBox = await Hive.openBox('lazyBox');
-
-lazyBox.put('key', 'value');
+var future = lazyBox.put('key', 'value');
 print(lazyBox.get('key')); // null
 
-await lazyBox.put('key2', 'value2');
-print(lazyBox.get('key2')); // value2
+await future;
+print(lazyBox.get('key')); // value
 ```
-
-{% hint style="info" %}
-Writing `null` is **NOT** the same as [deleting](delete.md) a value.
-{% endhint %}
 

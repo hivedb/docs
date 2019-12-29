@@ -4,22 +4,26 @@ If you want to get notified about changes in a box, you can subscribe to the `St
 
 In Flutter apps you can rebuild widgets every time the box changes.
 
-```dart
-var box = Hive.box('myBox');
+```dart:dart:350px
+import 'package:hive/hive.dart';
 
-box.watch().listen((event) {
-  if (event.deleted) {
-    print('${event.key} has been deleted');
-  } else {
-    print('${event.key} is now assigned to ${event.value}');
-  }
-});
+void main() async {
+  var box = await Hive.openBox('watchChangesBox');
 
-box.put('someKey', 123); // > someKey is now assigned to 123
-box.delete('someKey'); // > someKey has been deleted
+  box.watch().listen((event) {
+    if (event.deleted) {
+      print('${event.key} deleted');
+    } else {
+      print('${event.key} assigned to ${event.value}');
+    }
+  });
+
+  box.put('someKey', 123);
+  box.delete('someKey');
+}
 ```
 
-If you specify the `key` parameter, you are only notified about changes of this key.
+If you provide the `key` parameter, you are only notified about changes of the specified key.
 
 ```dart
 box.watch(key: 'someKey').listen((event) {

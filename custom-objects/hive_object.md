@@ -4,35 +4,49 @@ When you store custom objects in Hive you can extend `HiveObject` to manage your
 
 Here is an example how to use `HiveObject`:
 
-```dart
+```dart:dart:650px
+import 'package:hive/hive.dart';
+
+void main() async {
+  Hive.registerAdapter(PersonAdapter(), 0);
+  var persons = await Hive.openBox('persons');
+
+  var person = Person()
+    ..name = 'Lisa';
+
+  persons.add(person); // Store this object for the first time
+
+  print('Number of persons: ${persons.length}');
+  print("Lisa's first key: ${person.key}");
+
+  person.name = 'Lucas';
+  person.save(); // Update object
+
+  person.delete(); // Remove object from Hive
+  print('Number of persons: ${persons.length}');
+
+  persons.put('someKey', person);
+  print("Lisa's second key: ${person.key}");
+}
+
 @HiveType()
 class Person extends HiveObject {
-  @HiveField(0);
+  @HiveField(0)
   String name;
+}
 
-  @HiveField(1);
-  int age;
+class PersonAdapter extends TypeAdapter<Person> {
+  @override
+  Person read(BinaryReader reader) {
+    return Person()..name = reader.read();
+  }
+
+  @override
+  void write(BinaryWriter writer, Person obj) {
+    writer.write(obj.name);
+  }
 }
 ```
 
-```dart
-var box = Hive.box('persons');
-
-var person = Person()
-  ..name = 'Lisa'
-  ..age = 32;
-
-box.add(person); // Store this object for the first time
-
-print('New key of Lisa: ' + person.key);
-
-person.age = 35;
-person.save(); // Update object
-
-person.delete(); // Remove object from Hive
-```
-
-{% hint style="info" %}
-You also need to extend `HiveObject` if you want to use queries.
-{% endhint %}
+?> You also need to extend `HiveObject` if you want to use queries.
 

@@ -20,21 +20,51 @@ You could just use a regular list to store the persons, but updating a person wo
 
 HiveLists provide an easy way to solve the problem above. They allow you to store a "link" to the actual object.
 
-```dart
-void main() {
-  var persons = Hive.box<Person>('persons');
+```dart:dart:500px
+import 'package:hive/hive.dart';
+
+void main() async {
+  Hive.registerAdapter(PersonAdapter(), 0);
+  var persons = await Hive.openBox<Person>('personsWithLists');
+  persons.clear();
   
-  var mario = Person('Mario', 27);
-  var luna = Person('Luna', 34);
-  var alex = Person('Alex', 16);
+  var mario = Person('Mario');
+  var luna = Person('Luna');
+  var alex = Person('Alex');
   persons.addAll([mario, luna, alex]);
   
-  mario.friends = HiveList(mario, persons); // Create a HiveList
-  mario.friends.addAll([luna, alex]); // Add Luna and Alex to Mario's friends
-  print(mario.friends); // [Luna, Alex]
+  mario.friends = HiveList(persons); // Create a HiveList
+  mario.friends.addAll([luna, alex]); // Update Mario's friends
+  print(mario.friends);
   
   luna.delete(); // Remove Luna from Hive
-  print(mario.friends); // [Alex] (HiveList updates automatically)
+  print(mario.friends); // HiveList updates automatically
+}
+
+@HiveType()
+class Person extends HiveObject {
+  @HiveField(0)
+  String name;
+
+  @HiveField(1)
+  HiveList friends;
+
+  Person(this.name);
+
+  String toString() => name; // For print()
+}
+
+class PersonAdapter extends TypeAdapter<Person> {
+  @override
+  Person read(BinaryReader reader) {
+    return Person(reader.read())..friends = reader.read();
+  }
+
+  @override
+  void write(BinaryWriter writer, Person obj) {
+    writer.write(obj.name);
+    writer.write(obj.friends);
+  }
 }
 ```
 

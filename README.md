@@ -1,10 +1,6 @@
----
-description: Lightweight and blazing fast key-value database written in pure Dart.
----
+<img src="https://raw.githubusercontent.com/hivedb/hive/master/.github/logo_transparent.svg?sanitize=true" width="350px">
 
-# Hive Documentation
-
-## Add Hive to project
+## Add to project
 
 Add the following to your `pubspec.yaml`. Use the latest version instead of `[version]`.
 
@@ -19,6 +15,7 @@ dev_dependencies:
   hive_generator: ^[version]
   build_runner: ^[version]
 ```
+
 
 ## Initialize
 
@@ -42,23 +39,31 @@ All of your data is stored in boxes.
 var box = await Hive.openBox('testBox');
 ```
 
-{% hint style="info" %}
-You may call `box('testBox')` to get the singleton instance of an already opened box. This will save one async call.
-{% endhint %}
+?> You may call `box('testBox')` to get the singleton instance of an already opened box.
 
 ## Read & Write
 
 Hive supports all primitive types, `List`, `Map`, `DateTime`, and `Uint8List`. Any object can be can stored using [TypeAdapters](custom-objects/generate_adapter.md).
 
-```dart
-box.put('name', 'David');
+```dart:dart:300px
+import 'package:hive/hive.dart';
 
-var name = box.get('name');
+void main() async {
+  //Hive.init('sompePath') -> not needed in browser
 
-print('Name: $name');
+  var box = await Hive.openBox('testBox');
+
+  box.put('name', 'David');
+  
+  print('Name: ${box.get('name')}');
+}
 ```
 
 ## Video Tutorial
 
-{% embed url="https://www.youtube.com/watch?v=R1GSrrItqUs" caption="Learn the basics of using Hive in this well-made tutorial by Reso Coder." %}
+Learn the basics of using Hive in this well-made tutorial by Reso Coder.
+
+<div class="container">
+  <iframe id="ytplayer" type="text/html" src="https://www.youtube.com/embed/R1GSrrItqUs" class="video"/>
+</div>
 
