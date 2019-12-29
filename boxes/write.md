@@ -29,7 +29,7 @@ box.put('key', 'value');
 print(box.get('key')); // value
 
 
-var lazyBox = await Hive.openBox('lazyBox');
+var lazyBox = await Hive.openLazyBox('lazyBox');
 
 lazyBox.put('key', 'value');
 print(lazyBox.get('key')); // null
