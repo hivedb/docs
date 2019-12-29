@@ -1,6 +1,6 @@
 # Write
 
-Writing to a box is almost like writing to a map. All keys have to be ASCII Strings with a max length of 255 chars or unsinged 32 bit integers.
+Writing to a box is almost like writing to a map. All keys have to be ASCII Strings with a max length of 255 chars or unsigned 32 bit integers.
 
 ```dart
 var box = Hive.box('myBox');
