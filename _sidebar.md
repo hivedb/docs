@@ -1,9 +1,7 @@
 - Boxes
 
   - [What are boxes?](boxes/boxes.md)
-  - [Write](boxes/write.md)
-  - [Read](boxes/read.md)
-  - [Delete](boxes/delete.md)
+  - [Read & Write](boxes/read_write.md)
   - [Auto increment & indices](boxes/auto_increment.md)
   - [Watch changes](boxes/watch_changes.md)
 
@@ -14,6 +12,10 @@
   - [HiveObject](custom-objects/hive_object.md)
   - [Relationships](custom-objects/relationships.md)
   - [Create adapter manually](custom-objects/create_adapter_manually.md)
+
+- Flutter
+
+  - [WatchBoxBuilder](flutter/watch_box_builder.md)
 
 - Advanced
 

@@ -36,6 +36,11 @@
       name: 'Hive Documentation',
       loadSidebar: true,
       loadNavbar: true,
+      subMaxLevel: 2,
+      auto2top: true,
+      homepage: 'home.md',
+      themeColor: '#0BCDEC',
+      logo: 'https://raw.githubusercontent.com/hivedb/hive/master/.github/logo_transparent.svg?sanitize=true',
       plugins: [
         EditOnGithubPlugin.create('https://github.com/hivedb/docs/tree/master/', undefined, 'Edit on GitHub'),
         function (hook) {
@@ -44,7 +49,7 @@
             return content.replace(/^```dart:(dart|flutter):([0-9]{1,3})px(.*?)```/mgs, function (m, type, height, code) {
               var id = Math.random().toString(36).substr(2, 9);
               iframes[id] = code.trim();
-              return `<iframe style="width:100%;height:${height}px;" src="https://dartpad.hivedb.dev/embed-dart.html" id="${id}"></iframe>`;
+              return `<iframe style="width:100%;height:${height}px;" src="https://dartpad.hivedb.dev/embed-${type}.html" id="${id}"></iframe>`;
             });
           });
           hook.doneEach(function () {
