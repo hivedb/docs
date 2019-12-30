@@ -14,7 +14,7 @@
   - [Create adapter manually](custom-objects/create_adapter_manually.md)
 
 - Flutter
-
+  - [Hive & Flutter](best-practices/hive_and_flutter.md)
   - [WatchBoxBuilder](flutter/watch_box_builder.md)
 
 - Advanced
@@ -24,9 +24,7 @@
   - [Compaction](advanced/compaction.md)
 
 - Best Practices
-
   - [Modelling data](best-practices/modelling_data.md)
-  - [Hive & Flutter](best-practices/hive_and_flutter.md)
   - [When to use Hive](best-practices/when_to_use_hive.md)
 
 - More

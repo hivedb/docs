@@ -1,3 +1,27 @@
+# WatchBoxBuilder
+
+You can use the `WatchBoxBuilder` widget can to refresh parts of your app when the data in Hive changes.
+
+```dart
+class MyWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return WatchBoxBuilder(
+      box: Hive.box('myBox'),
+      watchKeys: ['firstName', 'lastName'],
+      builder: (context, box) {
+        return Text(box.get('firstName') + ' ' + box.get('lastName'));
+      }
+    )
+  }
+}
+```
+
+Each time the value associated with `firstName` or `lastName` change, the `builder` is called, and the `Text` widget refreshed.
+
+
+The following code is a simple example for a whole Flutter app using `WatchBoxBuilder`.:
+
 ```dart:flutter:800px
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
