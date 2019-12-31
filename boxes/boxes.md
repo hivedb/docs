@@ -41,9 +41,7 @@ This method is especially useful for Flutter apps because you don't need to pass
 
 If you don't need a box again, you should close it. All cached keys and values of the box will be dropped from memory and the box file is closed after all active read and write operations finished.
 
-{% hint style="info" %}
-It is perfectly fine to leave a box open for the runtime of the app. If you need a box again in the future, just leave it open.
-{% endhint %}
+?> It is perfectly fine to leave a box open for the runtime of the app. If you need a box again in the future, just leave it open.
 
 ```dart
 var box = await Hive.openBox('myBox');
@@ -78,7 +76,5 @@ Hive.box('users'); // ERROR
 Hive.box<Dog>('users'); // ERROR
 ```
 
-{% hint style="warning" %}
-Generic type parameters like Box&lt;List&lt;int&gt;&gt; are unsupported due to Dart limitations.
-{% endhint %}
+!> Generic type parameters like Box&lt;List&lt;int&gt;&gt; are unsupported due to Dart limitations.
 
