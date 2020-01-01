@@ -39,8 +39,12 @@
       subMaxLevel: 2,
       auto2top: true,
       homepage: 'home.md',
-      themeColor: '#0BCDEC',
-      logo: 'https://raw.githubusercontent.com/hivedb/hive/master/.github/logo_transparent.svg?sanitize=true',
+      themeColor: '#0AC7EF',
+      notFoundPage: true,
+      logo: 'assets/logo.svg',
+      pagination: {
+        crossChapter: true
+      },
       plugins: [
         EditOnGithubPlugin.create('https://github.com/hivedb/docs/tree/master/', undefined, 'Edit on GitHub'),
         function (hook) {
@@ -66,6 +70,7 @@
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
   <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+  <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
   <script src="//unpkg.com/prismjs/components/prism-dart.min.js"></script>
   <script src="//unpkg.com/prismjs/components/prism-yaml.min.js"></script>
 </body>

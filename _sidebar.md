@@ -1,3 +1,5 @@
+- [Quick Start](home.md)
+
 - Basics
 
   - [What are boxes?](basics/boxes.md)
