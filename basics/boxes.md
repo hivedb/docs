@@ -76,5 +76,5 @@ Hive.box('users'); // ERROR
 Hive.box<Dog>('users'); // ERROR
 ```
 
-!> Generic type parameters like Box&lt;List&lt;int&gt;&gt; are unsupported due to Dart limitations.
+!> Generic type parameters like Box<List<int>> are unsupported due to Dart limitations.
 

@@ -1,6 +1,8 @@
-# Hive & Flutter
+# Hive in Flutter
 
-## WatchBoxBuilder
+## Initialize Flutter Apps
+
+## ValueListenable
 
 You can use the `WatchBoxBuilder` widget can to refresh parts of your app when the data in Hive changes.
 

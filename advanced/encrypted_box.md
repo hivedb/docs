@@ -4,17 +4,29 @@ Sometimes it is necessary to store data securely on the disk. Hive supports AES-
 
 The only thing you need is a 256-bit \(32 bytes\) encryption key. Hive provides a helper function to generate a secure encryption key using the [Fortuna](https://en.wikipedia.org/wiki/Fortuna_%28PRNG%29) random number generator:
 
-```dart
-var key = Hive.generateSecureKey();
-```
-
 Just pass the key when you open a box:
 
-```dart
-var encryptedBox = await Hive.openBox('vaultBox', encryptionKey: key);
+```dart:dart:400px
+import 'dart:typed_data';
+import 'package:hive/hive.dart';
+
+void main() async {
+  var keyBox = await Hive.openBox('encryptionKeyBox');
+  if (!keyBox.containsKey('key')) {
+    var key = Hive.generateSecureKey();
+    keyBox.put('key', key);
+  }
+  
+  var key = keyBox.get('key') as Uint8List;
+  print('Encryption key: $key');
+
+  var encryptedBox = await Hive.openBox('vaultBox', encryptionKey: key);
+  encryptedBox.put('secret', 'Hive is cool');
+  print(encryptedBox.get('secret'));
+}
 ```
 
-There is no difference in using an encrypted box.
+!> The example above stores the encryption key in an unencrypted box. You should **NEVER** do that.
 
 ## Important:
 

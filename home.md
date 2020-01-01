@@ -27,9 +27,15 @@ Give Hive a directory where it can store its files. It is recommended to use an 
 Hive.init('path/to/hive');
 ```
 
-If you use a directory outside your app files, make sure to request runtime permission on Android.
+### Initialize Flutter Apps
 
-_In the browser, you don't have to call `Hive.init()`._
+In Flutter, you can use the extension method `Hive.initFlutter()` (needs to be awaited). It initializes Hive with a valid directory in your app files. You can also provide a subdirectory:
+
+```dart
+Hive.initFlutter(subDir: 'hive');
+```
+
+?> In the browser, no initialization is needed.
 
 ## Open a Box
 

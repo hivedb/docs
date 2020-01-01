@@ -21,7 +21,7 @@ If you use the `shared_preferences` packages and don't need to access them from 
 
 ## When not to use Hive
 
-Every kind of data can be stored in Hive when modeled correctly. That being said, it might sometimes be more convenient to use a relational database like SQLite. \(More convenient, not faster!\)
+Every kind of data can be stored in Hive when modeled correctly. That being said, it might sometimes be more convenient to use a relational database like SQLite. (More convenient, not faster!)
 
 Especially if your data has complex relations and you rely heavily on indices and complex queries, you should consider using SQLite.
 
