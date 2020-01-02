@@ -107,7 +107,7 @@ First we create a new Flutter project:
 flutter create favorite_books
 ```
 
-## Initializing Hive
+## Adding dependencies
 
 We can then go ahead and add `hive` and `hive_flutter` to the `pubspec.yaml` file in the project folder:
 
