@@ -1,6 +1,6 @@
 # Dark Mode Switch tutorial
 
-In this tutorial we will build a super simple app. It will have a single switch which can toggle between dark mode and light mode. We will use Hive to persist the choice.
+In this tutorial we will build a super simple app. It will have a single switch which can toggle between dark mode and light mode. We will use Hive to persist the switch state.
 
 Below you can find the final code and test the app. (Refresh this page to test persistence)
 
