@@ -18,6 +18,7 @@
 - Flutter Tutorials
 
   - [Dark Mode Switch](tutorials/dark_mode_switch.md)
+  - [Favorite Books](tutorials/favorite_books.md)
 
 - Advanced
 
@@ -38,4 +39,3 @@
   - [Browser support](more/browser.md)
   - [Frequently Asked Questions](more/faq.md)
   - [Limitations](more/limitations.md)
-
