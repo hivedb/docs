@@ -1,6 +1,8 @@
-# Dark Mode Switch tutorial
+# Favorite Books tutorial
 
-In this tutorial we will build a super simple app. It features a list of popular books and data persistance all with Hive in under 100 lines of code!
+[![](https://img.shields.io/badge/author-%40Reprevise-blue)](https://github.com/Reprevise)
+
+In this tutorial we will build a simple app which stores the user's favorite books. It features a list of popular books and data persistance all with Hive in under 100 lines of code!
 
 Below you can find the final code and test the app. (Refresh this page to test persistence)
 
@@ -68,13 +70,13 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Favorite Books with Hive',
+      title: 'Favorite Books',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Favorite Books w/ Hive"),
+          title: Text('Favorite Books'),
         ),
         body: ValueListenableBuilder(
           valueListenable: favoriteBooksBox.listenable(),
@@ -200,13 +202,13 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Favorite Books with Hive',
+      title: 'Favorite Books',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Favorite Books w/ Hive"),
+          title: Text('Favorite Books'),
         ),
         body: ValueListenableBuilder(
           valueListenable: favoriteBooksBox.listenable(),
@@ -233,7 +235,7 @@ class _MyAppState extends State<MyApp> {
 
 ## Getting the box
 
-Before we can even do anything with the box, we have to get it. We already opened the box when we initialized hive. The great thing about Hive is that you can get boxes anywhere, you don't have to pass the box down from widget to widget. Just call `Hive.box()`. It's a synchronous method so no messy `async await` stuff. It reads all of the values from the box and puts them in memory so we can access them.
+Before we can even do anything with the box, we have to get it. We already opened the box when we initialized Hive. The great thing about Hive is that you can get boxes anywhere, you don't have to pass the box down from widget to widget. Just call `Hive.box()`. It's a synchronous method so no messy `async await` stuff. It reads all of the values from the box and puts them in memory so we can access them.
 
 ```dart
 class _MyAppState extends State<MyApp> {
