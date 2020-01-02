@@ -9,7 +9,7 @@ You can either write a `TypeAdapter` yourself or generate it. Most of the time t
 When you want Hive to use a `TypeAdapter`, you have to register it. Two things are needed for that: An instance of the adapter and a `typeId`. Every type has a unique `typeId` which is used to find the correct adapter when a value is brought back from disk. All `typeId`s between 0 and 223 are allowed.
 
 ```dart
-Hive.registerAdapter(MyObjectAdapter(), 0);
+Hive.registerAdapter(MyObjectAdapter());
 ```
 
 ?> Make sure to use `typeId`s consistently. Your changes have to be compatible to previous versions of the box.
@@ -27,8 +27,8 @@ class User {
 }
 
 void main() async {
-  // Register Adapter with id 0
-  Hive.registerAdapter(UserAdapter(), 0); 
+  // Register Adapter
+  Hive.registerAdapter(UserAdapter()); 
 
   var box = await Hive.openBox<User>('userBox');
 
@@ -40,6 +40,9 @@ void main() async {
 
 // Can be generated automatically
 class UserAdapter extends TypeAdapter<User> {
+  @override
+  final typeId = 0;
+
   @override
   User read(BinaryReader reader) {
     return User(reader.read());
