@@ -19,23 +19,13 @@ dev_dependencies:
 
 ## Initialize
 
-Before you can use Hive in your app, you must initialize it. This only has to be done once.
-
-Give Hive a directory where it can store its files. It is recommended to use an empty directory. Each box has its own `.hive` file in the Hive-home directory.
+Initializes Hive with a valid directory in your app files. You can also provide a subdirectory:
 
 ```dart
-Hive.init('path/to/hive');
+await Hive.initFlutter();
 ```
 
-### Initialize Flutter Apps
-
-In Flutter, you can use the extension method `Hive.initFlutter()` (needs to be awaited). It initializes Hive with a valid directory in your app files. You can also provide a subdirectory:
-
-```dart
-Hive.initFlutter(subDir: 'hive');
-```
-
-?> In the browser, no initialization is needed.
+?> Use `Hive.init()` for non-Flutter apps.
 
 ## Open a Box
 
