@@ -15,6 +15,10 @@
   - [Relationships](custom-objects/relationships.md)
   - [Create adapter manually](custom-objects/create_adapter_manually.md)
 
+- Flutter Tutorials
+
+  - [Dark Mode Switch](tutorials/dark_mode_switch.md)
+
 - Advanced
 
   - [Lazy box](advanced/lazy_box.md)
