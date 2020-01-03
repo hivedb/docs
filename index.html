@@ -42,6 +42,7 @@
       themeColor: '#0AC7EF',
       notFoundPage: true,
       logo: 'assets/logo.svg',
+      ga: 'UA-148376435-1',
       pagination: {
         crossChapter: true
       },
@@ -68,7 +69,7 @@
       ]
     }
 
-    window.clearIndexedDb = function() {
+    window.clearIndexedDb = function () {
       var i = document.createElement('iframe');
       i.style.visibility = 'hidden';
       i.onload = function () { i.parentNode.removeChild(i); };
@@ -80,6 +81,7 @@
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/ga.min.js"></script>
   <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
   <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
   <script src="//unpkg.com/prismjs/components/prism-dart.min.js"></script>
