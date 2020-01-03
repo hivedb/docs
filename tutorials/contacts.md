@@ -85,7 +85,7 @@ flutter packages pub run build_runner build --delete-conflicting-outputs
 
 Now we need to initialize Hive and the adapters in the `main()` function.
 
-The `registerAdapter()` method is synchronous. Speaking of those methods, they take an instance of an adapter and a `typeId`. The `typeId` numbers can be in the range of 0-253. Read more [here](../custom-objects/type_adapters.md).
+The `registerAdapter()` method is synchronous. It takes an instance of an adapter and a `typeId`. The `typeId` numbers can be in the range of 0-253. Read more [here](../custom-objects/type_adapters.md).
 
 ```dart
 const String contactsBoxName = "contacts";
