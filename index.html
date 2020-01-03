@@ -67,6 +67,17 @@
         }
       ]
     }
+
+    window.clearIndexedDb = function() {
+      var i = document.createElement('iframe');
+      i.style.visibility = 'hidden';
+      i.onload = function () { i.parentNode.removeChild(i); };
+      i.src = 'https://dartpad.hivedb.dev/clear-indexeddb.html';
+      i.onload = function () {
+        location.reload();
+      }
+      document.body.appendChild(i);
+    }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
   <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
