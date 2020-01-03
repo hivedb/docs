@@ -26,7 +26,6 @@
 
   - [Lazy box](advanced/lazy_box.md)
   - [Encrypted box](advanced/encrypted_box.md)
-  - [Watch changes](boxes/watch_changes.md)
   - [Compaction](advanced/compaction.md)
 
 - Best Practices

@@ -8,7 +8,7 @@ Here is an example how to use `HiveObject`:
 import 'package:hive/hive.dart';
 
 void main() async {
-  Hive.registerAdapter(PersonAdapter(), 0);
+  Hive.registerAdapter(PersonAdapter());
   var persons = await Hive.openBox('persons');
 
   var person = Person()
@@ -36,6 +36,9 @@ class Person extends HiveObject {
 }
 
 class PersonAdapter extends TypeAdapter<Person> {
+  @override
+  final typeId = 0;
+
   @override
   Person read(BinaryReader reader) {
     return Person()..name = reader.read();

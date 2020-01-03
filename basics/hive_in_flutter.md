@@ -51,9 +51,18 @@ class MyApp extends StatelessWidget {
 
 Each time the value associated with `darkMode` changes, the `builder` is called, and the `Switch` widget refreshed.
 
-### Listening for a specific key
+### Listening for specific keys
 
-If 
+It is good practice to refresh widgets only if necessary. If a widget only depends on specific keys in your box, you can provide the `keys` parameter:
+
+```dart
+ValueListenableBuilder(
+  valueListenable: Hive.box('settings').listenable(keys: ['firstKey', 'secondKey']),
+  builder: (context, box, widget) {
+    // build widget
+  },
+)
+```
 
 ## Async calls
 

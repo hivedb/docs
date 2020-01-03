@@ -38,7 +38,7 @@ Above every object in an enum and every field in a model, you need to add a `Hiv
 As you can see we also have a map which converts the `Relationship` enum to a string so we don't need to worry about conversion methods and messy `if statements`.
 
 ```dart
-@HiveType()
+@HiveType(typeId: 1)
 enum Relationship {
   @HiveField(0)
   Family,
@@ -50,7 +50,7 @@ const relationshipString = <Relationship, String>{
   Relationship.Friend: "Friend",
 };
 
-@HiveType()
+@HiveType(typeId: 0)
 class Contact {
   @HiveField(0)
   String name;
@@ -379,7 +379,7 @@ import 'package:hive/hive.dart';
 
 const String contactsBoxName = "contacts";
 
-@HiveType()
+@HiveType(typeId: 1)
 enum Relationship {
   @HiveField(0)
   Family,
@@ -391,7 +391,7 @@ const relationshipString = <Relationship, String>{
   Relationship.Friend: "Friend",
 };
 
-@HiveType()
+@HiveType(typeId: 0)
 class Contact {
   @HiveField(0)
   String name;
@@ -407,8 +407,8 @@ class Contact {
 
 void main() async {
   await Hive.initFlutter();
-  Hive.registerAdapter(ContactAdapter(), 0);
-  Hive.registerAdapter(RelationshipAdapter(), 1);
+  Hive.registerAdapter(ContactAdapter());
+  Hive.registerAdapter(RelationshipAdapter());
   await Hive.openBox<Contact>(contactsBoxName);
   runApp(MyApp());
 }
@@ -609,6 +609,9 @@ class _AddContactState extends State<AddContact> {
 
 class RelationshipAdapter extends TypeAdapter<Relationship> {
   @override
+  final typeId = 1;
+
+  @override
   Relationship read(BinaryReader reader) {
     switch (reader.readByte()) {
       case 0:
@@ -634,6 +637,9 @@ class RelationshipAdapter extends TypeAdapter<Relationship> {
 }
 
 class ContactAdapter extends TypeAdapter<Contact> {
+  @override
+  final typeId = 0;
+
   @override
   Contact read(BinaryReader reader) {
     var numOfFields = reader.readByte();

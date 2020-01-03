@@ -1,5 +1,5 @@
-# Sketchpad tutorial
-<<[home.md]
+# Sketchpad tutorial (WIP)
+
 ```dart:flutter:500px
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -9,7 +9,7 @@ const sketchBox = 'sketchpadBox';
 
 void main() async {
   await Hive.initFlutter();
-  Hive.registerAdapter(ColoredPathAdapter(), 35);
+  Hive.registerAdapter(ColoredPathAdapter());
   await Hive.openBox<ColoredPath>(sketchBox);
   runApp(DrawApp());
 }
@@ -70,6 +70,9 @@ class ColoredPath {
 }
 
 class ColoredPathAdapter extends TypeAdapter<ColoredPath> {
+  @override
+  final typeId = 0;
+
   @override
   ColoredPath read(BinaryReader reader) {
     var path = ColoredPath(reader.readByte());
@@ -248,4 +251,32 @@ class UndoButton extends StatelessWidget {
     );
   }
 }
+```
+
+## Setup
+
+First we create a new Flutter project:
+
+```
+flutter create sketchpad
+```
+
+## Adding dependencies
+
+We can then go ahead and add `hive` and `hive_flutter` to the `pubspec.yaml` file in the project folder:
+
+```yaml
+name: sketchpad
+
+environment:
+  sdk: '>=2.6.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  hive: ^1.2.0
+  hive_flutter: ^0.3.0+1
+
+flutter:
+  uses-material-design: true
 ```

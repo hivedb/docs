@@ -24,7 +24,7 @@ HiveLists provide an easy way to solve the problem above. They allow you to stor
 import 'package:hive/hive.dart';
 
 void main() async {
-  Hive.registerAdapter(PersonAdapter(), 0);
+  Hive.registerAdapter(PersonAdapter());
   var persons = await Hive.openBox<Person>('personsWithLists');
   persons.clear();
   
@@ -55,6 +55,9 @@ class Person extends HiveObject {
 }
 
 class PersonAdapter extends TypeAdapter<Person> {
+  @override
+  final typeId = 0;
+
   @override
   Person read(BinaryReader reader) {
     return Person(reader.read())..friends = reader.read();
