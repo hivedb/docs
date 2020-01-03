@@ -79,6 +79,10 @@ Also notice how you have an error on that line. To get rid of it, run the follow
 flutter packages pub run build_runner build --delete-conflicting-outputs
 ```
 
+That command generates the adapters for you, no work required!
+
+!> Do _not_ modify the code inside of the generated adapters. If you want to make your own adapter, read [here](../custom-objects/create_adapter_manually.md).
+
 !> Make sure you added the `build_runner` dependency to your `pubspec.yaml`!
 
 ?> The `--delete-conflicting-outputs` option is useful if you're re-generating the files as it will delete them automatically. Otherwise, it will throw an error if you don't delete the files that have already been generated.
