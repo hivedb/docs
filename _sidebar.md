@@ -19,6 +19,7 @@
 
   - [Dark Mode Switch](tutorials/dark_mode_switch.md)
   - [Favorite Books](tutorials/favorite_books.md)
+  - [Sketchpad](tutorials/sketchpad.md)
 
 - Advanced
 
