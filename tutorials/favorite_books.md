@@ -1,6 +1,6 @@
 # Favorite Books tutorial
 
-[![](https://img.shields.io/badge/author-%40Reprevise-blue)](https://github.com/Reprevise)
+[![](https://img.shields.io/badge/author-%40Reprevise-blue?style=for-the-badge)](https://github.com/Reprevise)
 
 In this tutorial we will build a simple app which stores the user's favorite books. It features a list of popular books and data persistance all with Hive in under 100 lines of code!
 

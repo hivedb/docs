@@ -1,6 +1,6 @@
 # Contacts App
 
-[![](https://img.shields.io/badge/author-%40Reprevise-blue)](https://github.com/Reprevise)
+[![](https://img.shields.io/badge/author-%40Reprevise-blue?style=for-the-badge)](https://github.com/Reprevise)
 
 In this tutorial, we will be building a fully functional app that stores your contacts in under 230 lines of code!
 
