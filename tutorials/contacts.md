@@ -27,6 +27,11 @@ dev_dependencies:
     sdk: flutter
 ```
 
+[![](https://img.shields.io/pub/v/hive?label=hive&style=for-the-badge)](https://pub.dev/packages/hive)
+[![](https://img.shields.io/pub/v/hive_flutter?label=hive_flutter&style=for-the-badge)](https://pub.dev/packages/hive_flutter)
+[![](https://img.shields.io/pub/v/hive_generator?label=hive_generator&style=for-the-badge)](https://pub.dev/packages/hive_generator)
+[![](https://img.shields.io/pub/v/build_runner?label=build_runner&style=for-the-badge)](https://pub.dev/packages/build_runner)
+
 ## Models and Enums
 
 We need to define our models and enums. We're calling the model class `Contact` which stores the necessary information for a contact and one of the fields in the `Contact` model is an enum which is called `Relationship` which defines the relationship between the people.
@@ -147,7 +152,7 @@ class MyApp extends StatelessWidget {
                 String relationship =
                     relationshipString[currentContact.relationship];
                 return Card(
-                  clipBehavior: Clip.antiAlias, 
+                  clipBehavior: Clip.antiAlias,
                   child: InkWell(
                     onLongPress: () { /* ... */ },
                     child: Padding(
@@ -434,7 +439,7 @@ class MyApp extends StatelessWidget {
                 String relationship =
                     relationshipString[currentContact.relationship];
                 return Card(
-                  clipBehavior: Clip.antiAlias, 
+                  clipBehavior: Clip.antiAlias,
                   child: InkWell(
                     onLongPress: () {
                       showDialog(

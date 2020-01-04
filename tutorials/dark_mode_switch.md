@@ -58,21 +58,24 @@ We can then go ahead and add Hive to the `pubspec.yaml` file in the project fold
 name: dark_mode_switch
 
 environment:
-  sdk: ">=2.6.0 <3.0.0"
+  sdk: '>=2.6.0 <3.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
-  hive: ^1.2.0
-  hive_flutter: ^0.3.0
+  hive: ^1.3.0
+  hive_flutter: ^0.3.0+1
 
 flutter:
   uses-material-design: true
 ```
 
+[![](https://img.shields.io/pub/v/hive?label=hive&style=for-the-badge)](https://pub.dev/packages/hive)
+[![](https://img.shields.io/pub/v/hive_flutter?label=hive_flutter&style=for-the-badge)](https://pub.dev/packages/hive_flutter)
+
 ## Structure of the app
 
-The following is the main structure of our app. A Material themed app with a single `Switch` in the center. 
+The following is the main structure of our app. A Material themed app with a single `Switch` in the center.
 
 ```dart:flutter:500px
 import 'package:flutter/material.dart';
@@ -99,7 +102,6 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-
 ## Initializing Hive
 
 Now we can import `hive` and `hive_flutter` to initialize Hive.
@@ -121,7 +123,6 @@ void main() async {
 ```
 
 ?> We open the box in the `main()` method, so we can later use `Hive.box()` and avoid dealing with async code.
-
 
 ## Persisting the Switch state
 
@@ -172,10 +173,9 @@ class MyApp extends StatelessWidget {
 
 When you run the example, you will notice that it does not work as intended. The reason is that we don't refresh our widgets based on the changed `darkMode` value.
 
-
 ## Refreshing
 
-The last step is to refresh the app when necessary. The easiest way to refresh  widgets based on Hive changes is using `box.listenable()` and `ValueListenableBuilder`.
+The last step is to refresh the app when necessary. The easiest way to refresh widgets based on Hive changes is using `box.listenable()` and `ValueListenableBuilder`.
 
 ```dart:flutter:700px
 import 'package:flutter/material.dart';

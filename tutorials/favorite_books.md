@@ -122,12 +122,15 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  hive: ^1.2.0
+  hive: ^1.3.0
   hive_flutter: ^0.3.0+1
 
 flutter:
   uses-material-design: true
 ```
+
+[![](https://img.shields.io/pub/v/hive?label=hive&style=for-the-badge)](https://pub.dev/packages/hive)
+[![](https://img.shields.io/pub/v/hive_flutter?label=hive_flutter&style=for-the-badge)](https://pub.dev/packages/hive_flutter)
 
 ## Imports
 
