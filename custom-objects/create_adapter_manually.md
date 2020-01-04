@@ -7,11 +7,14 @@ Sometimes it might be necessary to create a custom `TypeAdapter`. You can do tha
 It is very easy to implement a `TypeAdapter`. Keep in mind that `TypeAdapter`s have to be immutable! Here is the `DataTimeAdapter` used by Hive internally:
 
 ```dart
-class DataTimeAdapter extends TypeAdapter<DateTime> {
+class DateTimeAdapter extends TypeAdapter<DateTime> {
+  @override
+  final typeId = 16;
+
   @override
   DateTime read(BinaryReader reader) {
-    var millis = reader.readInt();
-    return DateTime.fromMillisecondsSinceEpoch(millis);
+    var micros = reader.readInt();
+    return DateTime.fromMillisecondsSinceEpoch(micros);
   }
 
   @override
@@ -21,6 +24,9 @@ class DataTimeAdapter extends TypeAdapter<DateTime> {
 }
 ```
 
+!> As of Hive 1.3.0, all adapters require a `typeId` instance variable!
+
+The `typeId` instance variable assigns the number to be registered to that adapter. It has to be unique between all adapters.
 The `read()` method is called when your object has to be read from the disk. Use the `BinaryReader` to read all the properties of your object. In the above sample, it is only an `int` containing `millisecondsSinceEpoch`.  
 The `write()` method is the same just for writing the object to the disk.
 
