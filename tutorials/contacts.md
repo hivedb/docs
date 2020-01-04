@@ -17,11 +17,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  hive: ^1.2.0
+  hive: ^1.3.0
   hive_flutter: ^0.3.0+1
 
 dev_dependencies:
-  hive_generator: ^0.6.0
+  hive_generator: ^0.7.0
   build_runner: ^1.7.2
   flutter_test:
     sdk: flutter
