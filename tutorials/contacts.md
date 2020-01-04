@@ -81,29 +81,27 @@ Also notice how you have an error on that line. To get rid of it, run the follow
 flutter packages pub run build_runner build --delete-conflicting-outputs
 ```
 
-That command generates the adapters for you, no work required!
+That command generates the adapters for you, no work required! The `--delete-conflicting-outputs` option is useful if you're re-generating the files as it will delete them automatically. Otherwise, it will throw an error if you don't delete the files that have already been generated.
 
-!> Do _not_ modify the code inside of the generated adapters. If you want to make your own adapter, read [here](../custom-objects/create_adapter_manually.md).
-
-!> Make sure you added the `build_runner` dependency to your `pubspec.yaml`!
-
-?> The `--delete-conflicting-outputs` option is useful if you're re-generating the files as it will delete them automatically. Otherwise, it will throw an error if you don't delete the files that have already been generated.
+!> Do _not_ modify the code inside of the generated adapters. If you want to make your own adapter, read [here](../custom-objects/create_adapter_manually.md) and make sure you added the `build_runner` dependency to your `pubspec.yaml`!
 
 Now we need to initialize Hive and the adapters in the `main()` function.
 
-The `registerAdapter()` method is synchronous. It takes an instance of an adapter and a `typeId`. The `typeId` numbers can be in the range of 0-253. Read more [here](../custom-objects/type_adapters.md).
+The `registerAdapter()` method is synchronous and it just takes an instance of the adapter. Read more [here](../custom-objects/type_adapters.md).
 
 ```dart
 const String contactsBoxName = "contacts";
 
 void main() async {
   await Hive.initFlutter();
-  Hive.registerAdapter(ContactAdapter(), 0);
-  Hive.registerAdapter(RelationshipAdapter(), 1);
+  Hive.registerAdapter<Contact>(ContactAdapter());
+  Hive.registerAdapter<Relationship>(RelationshipAdapter());
   await Hive.openBox<Contact>(contactsBoxName);
   runApp(MyApp());
 }
 ```
+
+!> As of Hive 1.3.0, the `registerAdapter()` method no longer takes a `typeId` parameter. The `@HiveType` annotation has a paramter for `typeId` now.
 
 ## Main App Structure
 
@@ -407,8 +405,8 @@ class Contact {
 
 void main() async {
   await Hive.initFlutter();
-  Hive.registerAdapter(ContactAdapter());
-  Hive.registerAdapter(RelationshipAdapter());
+  Hive.registerAdapter<Contact>(ContactAdapter());
+  Hive.registerAdapter<Relationship>(RelationshipAdapter());
   await Hive.openBox<Contact>(contactsBoxName);
   runApp(MyApp());
 }
