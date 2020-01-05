@@ -1,8 +1,14 @@
-# Dark Mode Switch tutorial
+# Dark Mode Switch Introduction
 
 In this tutorial we will build a super simple app. It will have a single switch which can toggle between dark mode and light mode. We will use Hive to persist the switch state.
 
-Below you can find the final code and test the app. (Refresh this page to test persistence)
+## Source Code Live Test
+
+(No repository yet.)
+
+Below you can find the final code and test the app.
+
+(Refresh this page to test persistence)
 
 ```dart:flutter:500px
 import 'package:flutter/material.dart';
@@ -52,7 +58,9 @@ First we create a new Flutter project:
 flutter create dark_mode_switch
 ```
 
-We can then go ahead and add Hive to the `pubspec.yaml` file in the project folder:
+## Dependencies
+
+Now we need to add Hive to the `pubspec.yaml` file in the project folder:
 
 ```yaml
 name: dark_mode_switch
@@ -63,12 +71,32 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  hive: ^1.2.0
-  hive_flutter: ^0.3.0
+  hive: ^1.3.0
+  hive_flutter: ^0.3.0+1
 
 flutter:
   uses-material-design: true
 ```
+
+## Initialization
+
+Now we can import `hive` and `hive_flutter` to initialize Hive.
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+
+const darkModeBox = 'darkModeTutorial';
+
+void main() async {
+  await Hive.initFlutter();
+  await Hive.openBox(darkModeBox);
+  runApp(MyApp());
+}
+```
+
+?> We open the box in the `main()` method, so we can later use `Hive.box()` and avoid dealing with async code.
 
 ## Structure of the app
 
@@ -98,30 +126,6 @@ class MyApp extends StatelessWidget {
   }
 }
 ```
-
-
-## Initializing Hive
-
-Now we can import `hive` and `hive_flutter` to initialize Hive.
-
-```dart
-import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
-import 'package:hive_flutter/hive_flutter.dart';
-
-const darkModeBox = 'darkModeTutorial';
-
-void main() async {
-  await Hive.initFlutter();
-  await Hive.openBox(darkModeBox);
-  runApp(MyApp());
-}
-
-...
-```
-
-?> We open the box in the `main()` method, so we can later use `Hive.box()` and avoid dealing with async code.
-
 
 ## Persisting the Switch state
 
@@ -171,7 +175,6 @@ class MyApp extends StatelessWidget {
 ?> We can use `Hive.box(darkModeBox)` in `MyApp` because we opened the box before this widget is used.
 
 When you run the example, you will notice that it does not work as intended. The reason is that we don't refresh our widgets based on the changed `darkMode` value.
-
 
 ## Refreshing
 
