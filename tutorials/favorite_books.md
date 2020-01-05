@@ -135,7 +135,7 @@ flutter:
   uses-material-design: true
 ```
 
-## Initializing Hive
+## Initialization
 
 I've defined a `const` variable to hold our `Box` name. Inside the `main()` function, we initialize Hive and open up the box. We also call `runApp()` to allow Flutter to build our app.
 
