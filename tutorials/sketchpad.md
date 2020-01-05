@@ -1,4 +1,4 @@
-# Sketchpad Introduction
+# Sketchpad Introduction (WIP)
 
 This tutorial shows you how to make a sketchpad app from scratch! You can draw and Hive will save all of it.
 
