@@ -1,4 +1,14 @@
-# Sketchpad tutorial (WIP)
+# Sketchpad Introduction
+
+This tutorial shows you how to make a sketchpad app from scratch! You can draw and Hive will save all of it.
+
+## Source Code & Live Test
+
+(No repository yet.)
+
+Below you can find the final code and test the app.
+
+(Reload to test persistance!)
 
 ```dart:flutter:500px
 import 'package:flutter/material.dart';
@@ -261,7 +271,7 @@ First we create a new Flutter project:
 flutter create sketchpad
 ```
 
-## Adding dependencies
+## Dependencies
 
 We can then go ahead and add `hive` and `hive_flutter` to the `pubspec.yaml` file in the project folder:
 
@@ -274,9 +284,28 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  hive: ^1.2.0
+  hive: ^1.3.0
   hive_flutter: ^0.3.0+1
 
 flutter:
   uses-material-design: true
+```
+
+## Initialization
+
+We need to initialize Hive and the `TypeAdapters`.
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:hive/hive.dart';
+
+const sketchBox = 'sketchpadBox';
+
+void main() async {
+  await Hive.initFlutter();
+  Hive.registerAdapter(ColoredPathAdapter());
+  await Hive.openBox<ColoredPath>(sketchBox);
+  runApp(DrawApp());
+}
 ```

@@ -1,10 +1,16 @@
-# Favorite Books tutorial
+# Favorite Books Introduction
 
 [![](https://img.shields.io/badge/author-%40Reprevise-blue)](https://github.com/Reprevise)
 
 In this tutorial we will build a simple app which stores the user's favorite books. It features a list of popular books and data persistance all with Hive in under 100 lines of code!
 
-Below you can find the final code and test the app. (Refresh this page to test persistence)
+## Source Code & Live Test
+
+Here's the source: https://github.com/Reprevise/favorite_books
+
+Below you can find the final code and test the app.
+
+(Reload to test persistance)
 
 ```dart:flutter:500px
 import 'package:flutter/material.dart';
@@ -109,7 +115,7 @@ First we create a new Flutter project:
 flutter create favorite_books
 ```
 
-## Adding dependencies
+## Dependencies
 
 We can then go ahead and add `hive` and `hive_flutter` to the `pubspec.yaml` file in the project folder:
 
@@ -129,14 +135,22 @@ flutter:
   uses-material-design: true
 ```
 
-## Imports
+## Initializing Hive
 
-Here are all of the imports that you need for this app!
+I've defined a `const` variable to hold our `Box` name. Inside the `main()` function, we initialize Hive and open up the box. We also call `runApp()` to allow Flutter to build our app.
 
 ```dart
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+
+const favoritesBox = 'favorite_books';
+
+void main() async {
+  await Hive.initFlutter();
+  await Hive.openBox<String>(favoritesBox);
+  runApp(MyApp());
+}
 ```
 
 ## Our Data
@@ -166,20 +180,6 @@ const List<String> books = [
   'The Grapes of Wrath',
   'Heart of Darkness',
 ];
-```
-
-## Initializing Hive
-
-I've defined a `const` variable to hold our `Box` name. Inside the `main()` function, we initialize Hive and open up the box. We also call `runApp()` to allow Flutter to build our app.
-
-```dart
-const favoritesBox = 'favorite_books';
-
-void main() async {
-  await Hive.initFlutter();
-  await Hive.openBox<String>(favoritesBox);
-  runApp(MyApp());
-}
 ```
 
 ## MyApp Widget
@@ -294,3 +294,7 @@ class _ListOfBooksState extends State<ListOfBooks> {
   // ...
 }
 ```
+
+## The End
+
+Congratulations, you have finished this tutorial where you have built a fully functional app that saves your favorite books. Feel free to change the UI to make it more beautiful than I did and add more features like the ability to filter out those you did or didn't like.
