@@ -51,7 +51,7 @@
         function (hook) {
           var iframes = {};
           hook.beforeEach(function (content) {
-            return content.replace(/^```dart:(dart|flutter):([0-9]{1,3})px(.*?)```/mgs, function (m, type, height, code) {
+            return content.replace(/^```dart:(dart|flutter):([0-9]{1,3})px([^\x05]*?)```/mg, function (m, type, height, code) {
               var id = Math.random().toString(36).substr(2, 9);
               iframes[id] = code.trim();
               return `<iframe style="width:100%;height:${height}px;" src="https://dartpad.hivedb.dev/embed-${type}.html" id="${id}"></iframe>`;
