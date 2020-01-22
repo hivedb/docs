@@ -45,7 +45,7 @@ Hive supports all primitive types, `List`, `Map`, `DateTime`, `BigInt` and `Uint
 import 'package:hive/hive.dart';
 
 void main() async {
-  //Hive.init('sompePath') -> not needed in browser
+  //Hive.init('somePath') -> not needed in browser
 
   var box = await Hive.openBox('testBox');
 

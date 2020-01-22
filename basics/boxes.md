@@ -18,9 +18,9 @@ var box = await Hive.openBox<E>('testBox');
 | encryptionKey | The key has to be a byte array with length 32 and is used to encrypt and decrypt all values in the box. |
 | keyComparator | By default, keys are sorted lexicographically. This parameters allows you to provide a custom sorting order. |
 | compactionStrategy | Specify your own rules for automatic compaction. |
-| crashRecovery | If your app is killed while a write operations is running, the last entry might be corrupted. This entry is deleted automatically when the app starts again. If you don't want this behaviour, you can disable it. |
+| crashRecovery | If your app is killed while a write operations is running, the last entry might be corrupted. This entry is deleted automatically when the app starts again. If you don't want this behavior, you can disable it. |
 | path | By default, boxes are stored in the directory given to `Hive.init()`. With this parameter you can specify the location where the box should be stored. |
-| bytes | Insead of using a file as backend, you can provide the box in binary form and open an in-memory box. |
+| bytes | Instead of using a file as backend, you can provide the box in binary form and open an in-memory box. |
 | `E` | The optional type parameter specifies the type of the values in the box. |
 
 If the box is already open, it is returned immediately and all supplied parameters are ignored.
@@ -65,7 +65,7 @@ box.add(5); // Compile time error
 
 This box can also contain subtypes of `User`.
 
-It is important that you provide the same type parameter to `Hive.box()`. You cannot open the same box multiple times with different type parametes.
+It is important that you provide the same type parameter to `Hive.box()`. You cannot open the same box multiple times with different type parameters.
 
 ```dart
 await Hive.openBox<User>('users');

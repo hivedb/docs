@@ -22,7 +22,7 @@ Lists returned by `get()` are always of type `List<dynamic>` \(Maps of type `Map
 
 ## Every object only exists once
 
-You always get the same instance of an object from a specific key. It does not matter for primitive values since primitives are immutable, but it is essentialfor all other objects.
+You always get the same instance of an object from a specific key. It does not matter for primitive values since primitives are immutable, but it is essential for all other objects.
 
 Here is an example:
 
@@ -49,7 +49,7 @@ In the sample above, only the cached object has been changed and not the underly
 
 ## Write
 
-Writing to a box is almost like writing to a map. All keys have to be ASCII Strings with a max length of 255 chars or unsinged 32 bit integers.
+Writing to a box is almost like writing to a map. All keys have to be ASCII Strings with a max length of 255 chars or unsigned 32 bit integers.
 
 ```dart
 var box = Hive.box('myBox');
