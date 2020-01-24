@@ -108,7 +108,7 @@ If the key does not exist, no disk access is needed and the returned `Future` fi
 
 ### Write null vs delete
 
-Writing `null` is **NOT** the same as [deleting](delete.md) a value.
+Writing `null` is **NOT** the same as deleting a value.
 
 ```dart:dart:300px
 import 'package:hive/hive.dart';
