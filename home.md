@@ -2,11 +2,9 @@
 
 ## Add to project
 
-Add the following to your `pubspec.yaml`. Use the latest version instead of `[version]`.
+Add the following to your `pubspec.yaml`:
 
-[![Core version](https://img.shields.io/pub/v/hive?label=hive)](https://pub.dev/packages/hive) [![Generator version](https://img.shields.io/pub/v/hive_flutter.svg?label=hive_flutter)](https://pub.dev/packages/hive_flutter) [![Flutter version](https://img.shields.io/pub/v/hive_generator.svg?label=hive_generator)](https://pub.dev/packages/hive_generator) [![Build runner version](https://img.shields.io/pub/v/build_runner.svg?label=build_runner)](https://pub.dev/packages/build_runner)
-
-```yaml
+```version
 dependencies:
   hive: ^[version]
   hive_flutter: ^[version]

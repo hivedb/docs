@@ -20,6 +20,32 @@
       a.appendChild(r);
     })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
   </script>
+  <script>
+    var hiveDependencies;
+    async function load() {
+      var url = 'https://api.allorigins.win/get?url=https://pub.dev/api/packages/'
+      var packages = ['hive', 'hive_flutter', 'hive_generator', 'build_runner']
+      Promise.all(packages.map(p => fetch(url + p))).then(responses =>
+        Promise.all(responses.map(res => res.json()))
+      ).then(json => {
+        var versions = json.map((j) => JSON.parse(j.contents)['latest']['version']);
+        hiveDependencies = `dependencies:
+  hive: ^${versions[0]}
+  hive_flutter: ^${versions[1]}
+
+dev_dependencies:
+  hive_generator: ^${versions[2]}
+  build_runner: ^${versions[3]}
+`;
+        var dependencyElement = document.getElementById('hiveDependencies');
+        if (dependencyElement !== null) {
+          var highlighted = Prism.highlight(hiveDependencies, Prism.languages.yaml, 'yaml');
+          dependencyElement.innerHTML = `<code class="language-yaml">${highlighted}</code>` + dependencyElement.innerHTML;
+        }
+      })
+    }
+    load();
+  </script>
   <style type="text/css">
     .container {
       position: relative;
@@ -74,6 +100,18 @@
                 delete iframes[id];
               };
             }
+          });
+        },
+        function (hook) {
+          var codes = {};
+          hook.beforeEach(function (content) {
+            return content.replace(/^```version[^\x05]+```/mg, function (m) {
+              if (hiveDependencies !== undefined) {
+                return '```yaml\n' + hiveDependencies + '\n```';
+              } else {
+                return '<pre data-lang="yaml" id="hiveDependencies"></pre>';
+              }
+            });
           });
         }
       ]
