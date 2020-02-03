@@ -105,7 +105,7 @@ dev_dependencies:
         function (hook) {
           var codes = {};
           hook.beforeEach(function (content) {
-            return content.replace(/^```version[^\x05]+```/mg, function (m) {
+            return content.replace(/^```version[^\x05]*?```/mg, function (m) {
               if (hiveDependencies !== undefined) {
                 return '```yaml\n' + hiveDependencies + '\n```';
               } else {
