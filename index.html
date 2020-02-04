@@ -9,7 +9,6 @@
   <meta name="viewport"
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="https://unpkg.com/docsify/lib/themes/vue.css">
-  <script defer src="https://static.hotjar.com/c/hotjar-1654615.js?sv=6"></script>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://www.youtube.com">
   <link rel="preconnect" href="https://i.ytimg.com">
@@ -97,6 +96,9 @@
       document.body.appendChild(i);
     }
 
+    window.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+    window._hjSettings = { hjid: 1654615, hjsv: 6 };
+
     var hiveDependencies;
     async function load() {
       var url = 'https://api.allorigins.win/get?url=https://pub.dev/api/packages/'
@@ -129,4 +131,5 @@ dev_dependencies:
   <script src="https://unpkg.com/docsify-copy-code@2"></script>
   <script src="https://unpkg.com/prismjs/components/prism-dart.min.js"></script>
   <script src="https://unpkg.com/prismjs/components/prism-yaml.min.js"></script>
+  <script src="https://static.hotjar.com/c/hotjar-1654615.js?sv=6"></script>
 </body>
