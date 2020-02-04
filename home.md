@@ -58,6 +58,6 @@ void main() async {
 Learn the basics of using Hive in this well-made tutorial by Reso Coder.
 
 <div class="container">
-  <iframe id="ytplayer" type="text/html" src="https://www.youtube.com/embed/R1GSrrItqUs" class="video"/>
+  <iframe id="ytplayer" type="text/html" data-src="https://www.youtube.com/embed/R1GSrrItqUs" class="video"/>
 </div>
 
