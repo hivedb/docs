@@ -16,7 +16,7 @@ import 'package:hive/hive.dart';
 
 part 'person.g.dart';
 
-@HiveType()
+@HiveType(typeId: 0)
 class Person {
   @HiveField(0)
   String name;
