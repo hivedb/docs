@@ -2,7 +2,7 @@
 
 The [hive\_generator](https://pub.dev/packages/hive_generator) automatically generates `TypeAdapter`s for almost any class.
 
-1. To generate a `TypeAdapter` for a class, annotate it with `@HiveType`
+1. To generate a `TypeAdapter` for a class, annotate it with `@HiveType` and provide a `typeId` (between 0 and 223)
 2. Annotate all fields which should be stored with `@HiveField`
 3. Run build task `flutter packages pub run build_runner build`
 4. [Register](generate_adapter.md) adapter
@@ -16,7 +16,7 @@ import 'package:hive/hive.dart';
 
 part 'person.g.dart';
 
-@HiveType()
+@HiveType(typeId : 1)
 class Person {
   @HiveField(0)
   String name;
@@ -50,7 +50,7 @@ If an existing class needs to be changed – for example, you'd like the class t
 Generating an adapter for enums works almost as it does for classes:
 
 ```dart
-@HiveType()
+@HiveType(typeId : 2)
 enum HairColor {
   @HiveField(0)
   brown,
