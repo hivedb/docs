@@ -9,14 +9,14 @@ The [hive\_generator](https://pub.dev/packages/hive_generator) automatically gen
 
 ### Example
 
-Given a library `person.dart` with a `Person` class annotated with `@HiveType`:
+Given a library `person.dart` with a `Person` class annotated with `@HiveType` with a **unique** `typeId` argument:
 
 ```dart
 import 'package:hive/hive.dart';
 
 part 'person.g.dart';
 
-@HiveType()
+@HiveType(typeId: 0)
 class Person {
   @HiveField(0)
   String name;
@@ -50,7 +50,7 @@ If an existing class needs to be changed – for example, you'd like the class t
 Generating an adapter for enums works almost as it does for classes:
 
 ```dart
-@HiveType()
+@HiveType(typeId: 0)
 enum HairColor {
   @HiveField(0)
   brown,
