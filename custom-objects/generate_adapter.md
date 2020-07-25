@@ -9,7 +9,7 @@ The [hive\_generator](https://pub.dev/packages/hive_generator) automatically gen
 
 ### Example
 
-Given a library `person.dart` with a `Person` class annotated with `@HiveType`:
+Given a library `person.dart` with a `Person` class annotated with `@HiveType` with a **unique** `typeId` argument:
 
 ```dart
 import 'package:hive/hive.dart';
