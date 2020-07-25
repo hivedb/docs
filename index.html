@@ -55,6 +55,7 @@
         function (hook) {
           var iframes = {};
           hook.beforeEach(function (content) {
+            iframes = {};
             return content.replace(/^```dart:(dart|flutter):([0-9]{1,3})px([^\x05]*?)```/mg, function (m, type, height, code) {
               var id = Math.random().toString(36).substr(2, 9);
               iframes[id] = code.trim();
@@ -63,9 +64,10 @@
           });
           hook.doneEach(function () {
             for (let [id, code] of Object.entries(iframes)) {
-              document.getElementById(id).onload = function () {
-                document.getElementById(id).contentWindow.postMessage({ 'sourceCode': { 'main.dart': code }, 'type': 'sourceCode' }, '*');
-                delete iframes[id];
+              var iframe = document.getElementById(id);
+              iframe.setAttribute('src', iframe.getAttribute('data-src'));
+              iframe.onload = function () {
+                iframe.contentWindow.postMessage({ 'sourceCode': { 'main.dart': code }, 'type': 'sourceCode' }, '*');
               };
             }
           });
@@ -94,15 +96,6 @@
         location.reload();
       }
       document.body.appendChild(i);
-    }
-
-    window.onload = function () {
-      var vidDefer = document.getElementsByTagName('iframe');
-      for (var i = 0; i < vidDefer.length; i++) {
-        if (vidDefer[i].getAttribute('data-src')) {
-          vidDefer[i].setAttribute('src', vidDefer[i].getAttribute('data-src'));
-        }
-      }
     }
 
     window.hj = function () { (h.hj.q = h.hj.q || []).push(arguments) };
