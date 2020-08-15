@@ -4,7 +4,7 @@ Sometimes it might be necessary to create a custom `TypeAdapter`. You can do tha
 
 !> Test your custom `TypeAdapter` thoroughly. If it does not work correctly, it may corrupt your box.
 
-It is very easy to implement a `TypeAdapter`. Keep in mind that `TypeAdapter`s have to be immutable! Here is the `DataTimeAdapter` used by Hive internally:
+It is very easy to implement a `TypeAdapter`. Keep in mind that `TypeAdapter`s have to be immutable! Here is the `DateTimeAdapter` used by Hive internally:
 
 ```dart
 class DateTimeAdapter extends TypeAdapter<DateTime> {
