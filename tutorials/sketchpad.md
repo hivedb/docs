@@ -4,7 +4,7 @@ This tutorial shows you how to make a sketchpad app from scratch! You can draw a
 
 ## Source Code & Live Test
 
-(No repository yet.)
+Here's the source: https://github.com/hivedb/samples/tree/master/sketchpad
 
 Below you can find the final code and test the app.
 

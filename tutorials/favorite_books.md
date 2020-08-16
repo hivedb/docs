@@ -6,7 +6,7 @@ In this tutorial we will build a simple app which stores the user's favorite boo
 
 ## Source Code & Live Test
 
-Here's the source: https://github.com/hivedb/samples/
+Here's the source: https://github.com/hivedb/samples/tree/master/favorite_books
 
 Below you can find the final code and test the app.
 
