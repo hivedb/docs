@@ -1,11 +1,11 @@
 # Generate adapter
 
-The [hive\_generator](https://pub.dev/packages/hive_generator) automatically generates `TypeAdapter`s for almost any class.
+The [hive\_generator](https://pub.dev/packages/hive_generator) package can automatically generate `TypeAdapter`s for almost any class.
 
 1. To generate a `TypeAdapter` for a class, annotate it with `@HiveType` and provide a `typeId` (between 0 and 223)
 2. Annotate all fields which should be stored with `@HiveField`
 3. Run build task `flutter packages pub run build_runner build`
-4. [Register](custom-objects/type_adapters.md) adapter
+4. [Register](custom-objects/type_adapters.md) the generated adapter
 
 ### Example
 
@@ -29,7 +29,7 @@ class Person {
 }
 ```
 
-As you can see, each field has a **unique** number \(unique per class\). These field numbers are used to identify the fields in the Hive binary format, and should not be changed once your class is in use.
+As you can see, each field annotated with `@HiveField` has a **unique** number \(unique per class\). These field numbers are used to identify the fields in the Hive binary format, and should not be changed once your class is in use.
 
 _Field numbers can be in the range 0-255_.
 
