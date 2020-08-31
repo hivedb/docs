@@ -8,7 +8,7 @@ We will be using model classes and enums, all of which Hive can store in it's da
 
 ## Source Code & Live Test
 
-Here's the source: https://github.com/Reprevise/contacts_app_hive
+Here's the source: https://github.com/hivedb/samples/tree/master/contacts
 
 Below you can find the final code and test the app.
 
