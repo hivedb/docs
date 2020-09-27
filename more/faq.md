@@ -34,7 +34,7 @@ Yes, but don't store too big images \(a few MB should be fine\).
 
 ## Can Hive sync data with a server?
 
-Not out of the box but you can do that yourself quite easily using the `box.toMap()` method and the [change notifier](../boxes/watch_changes.md).
+Not out of the box but you can do that yourself quite easily using the `box.toMap()` method and the [change notifier](../advanced/watch_changes.md).
 
 ## What type of encryption does Hive use?
 
