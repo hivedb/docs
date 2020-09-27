@@ -12,6 +12,7 @@ void main() async {
   friends.add('Lisa');            // index 0, key 0
   friends.add('Dave');            // index 1, key 1
   friends.put(123, 'Marco');      // index 2, key 123
+  friends.add('Paul');            // index 3, key 124
 
   print(friends.getAt(0));
   print(friends.get(0));
@@ -21,6 +22,9 @@ void main() async {
   
   print(friends.getAt(2));
   print(friends.get(123));
+  
+  print(friends.getAt(3));
+  print(friends.get(124));
 }
 ```
 
