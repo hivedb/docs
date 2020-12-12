@@ -60,7 +60,7 @@ box.put('friends', ['Dave', 'Simon', 'Lisa']);
 
 box.put(123, 'test');
 
-box.putAll({'key1': 'value1', 42: 'life'})
+box.putAll({'key1': 'value1', 42: 'life'});
 ```
 
 You may wonder why writing works without async code. This is one of the main strengths of Hive.  
