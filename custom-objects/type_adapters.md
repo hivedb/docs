@@ -14,6 +14,8 @@ Hive.registerAdapter(MyObjectAdapter());
 
 ?> Make sure to use `typeId`s consistently. Your changes have to be compatible to previous versions of the box.
 
+?> It's recommended to register all `TypeAdapter`s before opening any boxes.
+
 ```dart:dart:500px
 import 'package:hive/hive.dart';
 
