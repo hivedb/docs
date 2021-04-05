@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         body: ValueListenableBuilder(
           valueListenable: Hive.box('settings').listenable(),
-          builder: (context, box, widget) {
+          builder: (context, Box box, widget) {
             return Center(
               child: Switch(
                 value: box.get('darkMode', defaultValue: false),
