@@ -16,7 +16,7 @@ import 'package:hive/hive.dart';
 
 part 'person.g.dart';
 
-@HiveType(typeId : 1)
+@HiveType(typeId: 1)
 class Person {
   @HiveField(0)
   String name;
@@ -65,3 +65,30 @@ enum HairColor {
 
 For updating the enum, the same rules apply as above.
 
+## Default value
+
+You can provide default values to properties and fields easily by providing `defaultValue` argument to `@HiveField` annotation.
+
+```dart
+@HiveType(typeId: 2)
+class Customer {
+  @HiveField(1, defaultValue: 0.0)
+  double balance;
+}
+```
+
+You can also provide default value for enum types by setting `defaultValue` to `true`. If you have not set default value for enum types the first value will be used as default value instead.
+
+```dart
+@HiveType(typeId : 2)
+enum HairColor {
+  @HiveField(0)
+  brown,
+
+  @HiveField(1)
+  blond,
+
+  @HiveField(2, defaultValue: true)
+  black,
+}
+```
