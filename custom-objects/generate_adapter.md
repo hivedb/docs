@@ -77,7 +77,7 @@ class Customer {
 }
 ```
 
-You can also provide default value for enum types by setting `defaultValue` to `true`. If you have not set default value for enum types the first value will be used as default value instead.
+You can also provide default value for enum types by setting `defaultValue` to `true`. If you have not set default value for enum types, the first value will be used as default value.
 
 ```dart
 @HiveType(typeId: 2)
