@@ -44,6 +44,7 @@ If an existing class needs to be changed – for example, you'd like the class t
 * Fields can be renamed and even changed from public to private or vice versa as long as the field number stays the same.
 * Fields can be removed, as long as the field number is not used again in your updated class.
 * Changing the type of a field is not supported. You should create a new one instead.
+* You have to provide `defaultValue` for new added non-nullable fields after enabling null safety.
 
 ## Enums
 
@@ -76,6 +77,8 @@ class Customer {
   double balance;
 }
 ```
+
+!> Default values for custom types were introduced after `hive: 2.0.4` and `hive_generator: 1.1.0`.
 
 You can also provide default value for enum types by setting `defaultValue` to `true`. If you have not set default value for enum types, the first value will be used as default value.
 
