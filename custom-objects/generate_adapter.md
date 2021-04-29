@@ -50,7 +50,7 @@ If an existing class needs to be changed – for example, you'd like the class t
 Generating an adapter for enums works almost as it does for classes:
 
 ```dart
-@HiveType(typeId : 2)
+@HiveType(typeId: 2)
 enum HairColor {
   @HiveField(0)
   brown,
@@ -80,7 +80,7 @@ class Customer {
 You can also provide default value for enum types by setting `defaultValue` to `true`. If you have not set default value for enum types the first value will be used as default value instead.
 
 ```dart
-@HiveType(typeId : 2)
+@HiveType(typeId: 2)
 enum HairColor {
   @HiveField(0)
   brown,
