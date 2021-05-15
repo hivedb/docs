@@ -20,6 +20,10 @@ dev_dependencies:
 Initializes Hive with a valid directory in your app files. You can also provide a subdirectory:
 
 ```dart
+# import both package
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+
 await Hive.initFlutter();
 ```
 
