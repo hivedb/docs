@@ -24,7 +24,7 @@ class DateTimeAdapter extends TypeAdapter<DateTime> {
 }
 ```
 
-!> As of Hive 1.3.0, all adapters require a `typeId` instance variable!
+!> As of Hive 1.3.0, all adapters require a `typeId` instance variable! The custom `typeId` must be an int between `0` and `223`.
 
 The `typeId` instance variable assigns the number to be registered to that adapter. It has to be unique between all adapters.
 The `read()` method is called when your object has to be read from the disk. Use the `BinaryReader` to read all the properties of your object. In the above sample, it is only an `int` containing `millisecondsSinceEpoch`.  
