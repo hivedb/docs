@@ -54,3 +54,12 @@ class UserAdapter extends TypeAdapter<User> {
   }
 }
 ```
+
+## Check if Adapter is registered
+
+If you want to check if a type is already registered, you can use the `isAdapterRegistered` method and pass in the `typeId` as follows:
+```dart
+Hive.isAdapterRegistered(0);
+```
+
+This is useful say if you want to run `openBox` in multiple environments. Such an instance could be, you would like to run `openBox` in an isolate or background service and the app in the main isolate at the same time.
