@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ValueListenableBuilder(
       valueListenable: Hive.box(darkModeBox).listenable(),
-      builder: (context, box, widget) {
+      builder: (context, Box box, widget) {
         var darkMode = box.get('darkMode', defaultValue: false);
         return MaterialApp(
           themeMode: darkMode ? ThemeMode.dark : ThemeMode.light,
@@ -198,7 +198,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ValueListenableBuilder(
       valueListenable: Hive.box(darkModeBox).listenable(),
-      builder: (context, box, widget) {
+      builder: (context, Box box, widget) {
         var darkMode = box.get('darkMode', defaultValue: false);
         return MaterialApp(
           themeMode: darkMode ? ThemeMode.dark : ThemeMode.light,
