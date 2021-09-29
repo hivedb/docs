@@ -4,7 +4,7 @@
 
 Add the following to your `pubspec.yaml`:
 
-```version
+```yaml
 dependencies:
   hive: ^[version]
   hive_flutter: ^[version]
