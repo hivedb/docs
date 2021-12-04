@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Demo Settings',
       home: Scaffold(
-        body: ValueListenableBuilder(
+        body: ValueListenableBuilder<Box>(
           valueListenable: Hive.box('settings').listenable(),
           builder: (context, box, widget) {
             return Center(
@@ -56,7 +56,7 @@ Each time the value associated with `darkMode` changes, the `builder` is called,
 It is good practice to refresh widgets only if necessary. If a widget only depends on specific keys in your box, you can provide the `keys` parameter:
 
 ```dart
-ValueListenableBuilder(
+ValueListenableBuilder<Box>(
   valueListenable: Hive.box('settings').listenable(keys: ['firstKey', 'secondKey']),
   builder: (context, box, widget) {
     // build widget
