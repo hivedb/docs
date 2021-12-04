@@ -44,7 +44,7 @@ If an existing class needs to be changed – for example, you'd like the class t
 * Fields can be renamed and even changed from public to private or vice versa as long as the field number stays the same.
 * Fields can be removed, as long as the field number is not used again in your updated class.
 * Changing the type of a field is not supported. You should create a new one instead.
-* You have to provide `defaultValue` for new added non-nullable fields after enabling null safety.
+* You have to provide `defaultValue` for new non-nullable fields after enabling null safety.
 
 ## Enums
 
@@ -68,7 +68,7 @@ For updating the enum, the same rules apply as above.
 
 ## Default value
 
-You can provide default values to properties and fields easily by providing `defaultValue` argument to `@HiveField` annotation.
+You can provide default values to properties and fields by providing `defaultValue` argument to `@HiveField` annotation.
 
 ```dart
 @HiveType(typeId: 2)
