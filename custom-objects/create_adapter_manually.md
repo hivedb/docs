@@ -13,13 +13,13 @@ class DateTimeAdapter extends TypeAdapter<DateTime> {
 
   @override
   DateTime read(BinaryReader reader) {
-    var micros = reader.readInt();
-    return DateTime.fromMillisecondsSinceEpoch(micros);
+    final micros = reader.readInt();
+    return DateTime.fromMicrosecondsSinceEpoch(micros);
   }
 
   @override
   void write(BinaryWriter writer, DateTime obj) {
-    writer.writeInt(obj.millisecondsSinceEpoch);
+    writer.writeInt(obj.microsecondsSinceEpoch);
   }
 }
 ```
@@ -27,7 +27,7 @@ class DateTimeAdapter extends TypeAdapter<DateTime> {
 !> As of Hive 1.3.0, all adapters require a `typeId` instance variable!
 
 The `typeId` instance variable assigns the number to be registered to that adapter. It has to be unique between all adapters.
-The `read()` method is called when your object has to be read from the disk. Use the `BinaryReader` to read all the properties of your object. In the above sample, it is only an `int` containing `millisecondsSinceEpoch`.  
+The `read()` method is called when your object has to be read from the disk. Use the `BinaryReader` to read all the properties of your object. In the above sample, it is only an `int` containing `microsecondsSinceEpoch`.  
 The `write()` method is the same just for writing the object to the disk.
 
 ?> Make sure, you read properties in the same order you have written them before.
