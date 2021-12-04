@@ -35,6 +35,7 @@ void main() async {
   
   mario.friends = HiveList(persons); // Create a HiveList
   mario.friends.addAll([luna, alex]); // Update Mario's friends
+  mario.save(); // make persistent the change,
   print(mario.friends);
   
   luna.delete(); // Remove Luna from Hive
