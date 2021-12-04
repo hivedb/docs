@@ -377,7 +377,7 @@ void main() async {
 }
 ```
 
-!> As of Hive 1.3.0, the `registerAdapter()` method no longer takes a `typeId` parameter. The `@HiveType` annotation has a paramter for `typeId` now.
+!> As of Hive 1.3.0, the `registerAdapter()` method no longer takes a `typeId` parameter. The `@HiveType` annotation has a parameter for `typeId` now.
 
 ## Models and Enums
 
