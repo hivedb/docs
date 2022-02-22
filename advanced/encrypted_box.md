@@ -12,17 +12,20 @@ import 'package:hive/hive.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 void main() async {
-  final FlutterSecureStorage secureStorage = const FlutterSecureStorage();
-  var containsEncryptionKey = await secureStorage.containsKey(key: 'key');
-  if (!containsEncryptionKey) {
-    var key = Hive.generateSecureKey();
-    await secureStorage.write(key: 'key', value: base64UrlEncode(key));
+  const secureStorage = FlutterSecureStorage();
+  // if key not exists return null
+  final encryprionKey = await secureStorage.read(key: 'key');
+  if (encryprionKey == null) {
+    final key = Hive.generateSecureKey();
+    await secureStorage.write(
+      key: 'key',
+      value: base64UrlEncode(key),
+    );
   }
-  
-  var encryptionKey = base64Url.decode(await secureStorage.read(key: 'key'));
+  final key = await secureStorage.read(key: 'key');
+  final encryptionKey = base64Url.decode(key!);
   print('Encryption key: $encryptionKey');
-
-  var encryptedBox = await Hive.openBox('vaultBox', encryptionCipher: HiveAesCipher(encryptionKey));
+  final encryptedBox= await Hive.openBox('vaultBox', encryptionCipher: HiveAesCipher(encryptionKey));
   encryptedBox.put('secret', 'Hive is cool');
   print(encryptedBox.get('secret'));
 }
