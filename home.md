@@ -1,5 +1,7 @@
 # Quick Start
 
+Before you start: Consider using [Isar](https://isar.dev) a Flutter database by the author of Hive that is superior in every way!
+
 ## Add to project
 
 Add the following to your `pubspec.yaml`:
