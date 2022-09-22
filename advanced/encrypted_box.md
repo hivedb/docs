@@ -22,10 +22,10 @@ void main() async {
       value: base64UrlEncode(key),
     );
   }
-  final key = await secureStorage.read(key: 'key');
-  final encryptionKey = base64Url.decode(key!);
-  print('Encryption key: $encryptionKey');
-  final encryptedBox= await Hive.openBox('vaultBox', encryptionCipher: HiveAesCipher(encryptionKey));
+  encryptionKey = await secureStorage.read(key: 'key');
+  final key = base64Url.decode(encryptionKey!);
+  print('Encryption key: $key');
+  final encryptedBox= await Hive.openBox('vaultBox', encryptionCipher: HiveAesCipher(key));
   encryptedBox.put('secret', 'Hive is cool');
   print(encryptedBox.get('secret'));
 }
