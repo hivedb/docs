@@ -13,6 +13,7 @@
   - [Generate adapter](custom-objects/generate_adapter.md)
   - [HiveObject](custom-objects/hive_object.md)
   - [Relationships](custom-objects/relationships.md)
+  - [Inheritance](custom-objects/inheritance.md)
   - [Create adapter manually](custom-objects/create_adapter_manually.md)
 
 - Flutter Tutorials
