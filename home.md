@@ -59,7 +59,4 @@ void main() async {
 
 Learn the basics of using Hive in this well-made tutorial by Reso Coder.
 
-<div class="container">
-  <iframe id="ytplayer" type="text/html" data-src="https://www.youtube.com/embed/R1GSrrItqUs" class="video"/>
-</div>
-
+[![Tutorial by Reso Coder](https://img.youtube.com/vi/R1GSrrItqUs/hqdefault.jpg)](https://youtu.be/R1GSrrItqUs "Hive (Flutter Tutorial) – Lightweight & Fast NoSQL Database in Pure Dart")
